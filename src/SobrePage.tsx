@@ -10,22 +10,18 @@ const fadeUp = {
 };
 
 export default function SobrePage() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
   useEffect(() => {
     window.scrollTo(0, 0);
-    const handleMouseMove = (e: MouseEvent) => setMousePosition({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
-    <div className="min-h-[100vh] bg-paper text-ink font-sans relative overflow-hidden">
-      <motion.div
-        className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[100] blur-xl hidden md:block bg-brand/30 shadow-[0_0_40px_#00F0FF]"
-        animate={{ x: mousePosition.x - 24, y: mousePosition.y - 24 }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
-      />
+    <motion.div 
+      initial={{ opacity: 0, filter: "blur(5px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -20, filter: "blur(5px)" }}
+      transition={{ duration: 0.4 }}
+      className="min-h-[100vh] bg-paper text-ink font-sans relative overflow-hidden"
+    >
 
       {/* Navegação Simplificada para a página secundária */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-paper/90 backdrop-blur-md border-b border-ink/10 py-6">
@@ -92,6 +88,6 @@ export default function SobrePage() {
 
         </motion.div>
       </section>
-    </div>
+    </motion.div>
   );
 }

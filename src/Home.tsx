@@ -66,6 +66,7 @@ const HERO_SLIDES = [
     subtitle: "Produção audiovisual premium, design estratégico e storytelling visual que transformam marcas em legados eternos.",
     color: "text-brand",
     glowLight: "rgba(0,240,255,0.4)",
+    videoUrl: "/studio/hero_1.mp4",
     fallbackImg: "/studio/hero_1.webp"
   },
   {
@@ -74,6 +75,7 @@ const HERO_SLIDES = [
     subtitle: "Desenvolvimento de alta performance para Apps, Web e Games. Transformamos ideias completas em experiências digitais épicas e responsivas.",
     color: "text-[#00FF41]",
     glowLight: "rgba(0,255,65,0.3)",
+    videoUrl: "/studio/hero_2.mp4",
     fallbackImg: "/studio/hero_2.webp"
   },
   {
@@ -82,6 +84,7 @@ const HERO_SLIDES = [
     subtitle: "Em breve: Cursos práticos de Fotografia, Filmagem, Edição de Vídeo e Motion. Aprenda com os maiores especialistas do mercado audiovisual.",
     color: "text-[#FFD700]",
     glowLight: "rgba(255,215,0,0.3)",
+    videoUrl: "/studio/hero_3.mp4",
     fallbackImg: "/studio/hero_3.webp"
   }
 ];
@@ -124,19 +127,14 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDraftDropdownOpen, setIsDraftDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    const handleMouseMove = (e: MouseEvent) => setMousePosition({ x: e.clientX, y: e.clientY });
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -149,14 +147,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen selection:bg-brand selection:text-paper font-sans">
-      {/* Custom Mouse Cursor Glow */}
-      <motion.div
-        className="fixed top-0 left-0 w-12 h-12 bg-brand/20 rounded-full pointer-events-none z-[100] blur-xl shadow-[0_0_30px_rgba(0,240,255,0.6)] hidden md:block"
-        animate={{ x: mousePosition.x - 24, y: mousePosition.y - 24 }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
-      />
-
+    <motion.div 
+      initial={{ opacity: 0, filter: "blur(5px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -20, filter: "blur(5px)" }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen selection:bg-brand selection:text-paper font-sans"
+    >
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-paper/90 backdrop-blur-md border-b border-brand/20 py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -256,15 +253,23 @@ export default function Home() {
               transition={{ duration: 1.2, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full"
             >
-              {/* Scale animation separated for better GPU performance and mix-blend-mode removed */}
-              <motion.img 
-                initial={{ scale: 1 }}
-                animate={{ scale: 1.05 }}
-                transition={{ duration: 15, ease: "linear" }}
-                src={HERO_SLIDES[activeSlide].fallbackImg} 
-                alt="Background Slide" 
-                className="w-full h-full object-cover opacity-20"
-              />
+              <motion.div 
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="w-full h-full absolute inset-0"
+              >
+                <video 
+                  src={HERO_SLIDES[activeSlide].videoUrl} 
+                  poster={HERO_SLIDES[activeSlide].fallbackImg} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full h-full object-cover opacity-30"
+                />
+              </motion.div>
               
               <div className="absolute inset-0 bg-gradient-to-r from-paper via-paper/90 to-transparent"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/20 to-transparent"></div>
@@ -283,16 +288,16 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-8 relative min-h-[400px] flex flex-col justify-end">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="popLayout">
               <motion.div
                 key={activeSlide}
                 variants={{
-                  hidden: { opacity: 0 },
-                  show: { opacity: 1, transition: { staggerChildren: 0.15 } }
+                  hidden: { opacity: 0, x: -20 },
+                  show: { opacity: 1, x: 0, transition: { staggerChildren: 0.05, duration: 0.4 } }
                 }}
                 initial="hidden"
                 animate="show"
-                exit={{ opacity: 0, transition: { duration: 0.4 } }}
+                exit={{ opacity: 0, x: 20, transition: { duration: 0.2 } }}
                 className="relative z-10"
               >
                 <h1 className="font-display text-[15vw] lg:text-[10rem] leading-[0.85] tracking-tighter uppercase relative">
@@ -300,8 +305,8 @@ export default function Home() {
                     <span key={idx} className="block overflow-hidden pb-1 lg:pb-3">
                       <motion.span 
                         variants={{
-                          hidden: { y: "110%", opacity: 0, rotateZ: 2 },
-                          show: { y: "0%", opacity: 1, rotateZ: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } }
+                          hidden: { y: "110%", opacity: 0 },
+                          show: { y: "0%", opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
                         }}
                         className="block origin-top-left"
                       >
@@ -716,6 +721,6 @@ export default function Home() {
           width: fit-content;
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 }

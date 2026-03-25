@@ -55,28 +55,24 @@ const staggerContainer = {
 
 export default function ServicePage() {
   const { serviceId } = useParams();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [selectedField, setSelectedField] = useState("");
 
   const data = SERVICES_DATA[serviceId?.toLowerCase() || "studio"];
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const handleMouseMove = (e: MouseEvent) => setMousePosition({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [serviceId]);
 
   if (!data) return <div className="min-h-screen flex items-center justify-center bg-paper text-ink">Serviço não encontrado.</div>;
 
   return (
-    <div className="min-h-screen bg-paper text-ink selection:bg-brand selection:text-paper font-sans">
-      <motion.div
-        className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[100] blur-xl hidden md:block"
-        style={{ backgroundColor: data.glowLight, boxShadow: `0 0 40px ${data.brandColor}` }}
-        animate={{ x: mousePosition.x - 24, y: mousePosition.y - 24 }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
-      />
+    <motion.div 
+      initial={{ opacity: 0, filter: "blur(5px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      exit={{ opacity: 0, y: -20, filter: "blur(5px)" }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-paper text-ink selection:bg-brand selection:text-paper font-sans"
+    >
 
       {/* Navegação Simplificada para a página secundária */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-paper/90 backdrop-blur-md border-b border-ink/10 py-6">
@@ -195,6 +191,6 @@ export default function ServicePage() {
           </form>
         </motion.div>
       </section>
-    </div>
+    </motion.div>
   );
 }
