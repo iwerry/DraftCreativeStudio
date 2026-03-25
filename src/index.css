@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  
+  --color-brand: #ff4d00; /* Sharp Orange */
+  --color-ink: #0a0a0a;
+  --color-paper: #fcfcfc;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+}
+
+.brutal-border {
+  @apply border-2 border-ink;
+}
+
+.brutal-shadow {
+  box-shadow: 4px 4px 0px 0px #0a0a0a;
+}
+
+.brutal-shadow-hover:hover {
+  box-shadow: 8px 8px 0px 0px #0a0a0a;
+  transform: translate(-2px, -2px);
+}
