@@ -145,7 +145,12 @@ export default function ServicePage() {
             <p className="text-ink/60 text-sm font-sans uppercase tracking-widest">A magia está em entender sua visão para o escopo de {data.title}</p>
           </div>
 
-          <form className="space-y-8 flex-1">
+          <form action="https://formsubmit.co/draftcs21@gmail.com" method="POST" className="space-y-8 flex-1">
+            <input type="hidden" name="_subject" value={`Briefing/Lead Novo para a Unidade: ${data.title}`} />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value={window.location.href} />
+            <input type="hidden" name="Atuacao_Específica" value={selectedField || "Aberto/Geral"} />
+
             <div className="space-y-3">
               <label className="text-xs uppercase font-bold tracking-widest text-ink/50">Área Específica Desejada</label>
               <div className="flex flex-wrap gap-2">
@@ -166,20 +171,20 @@ export default function ServicePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs uppercase font-bold tracking-widest text-ink/50">Como chamamos você?</label>
-                <input type="text" className="w-full p-4 border-b border-ink/20 bg-transparent text-ink focus:border-ink outline-none transition-colors" placeholder="Seu Nome Completo" />
+                <input type="text" name="Nome" required className="w-full p-4 border-b border-ink/20 bg-transparent text-ink focus:border-ink outline-none transition-colors" placeholder="Seu Nome Completo" />
               </div>
               <div className="space-y-2">
                 <label className="text-xs uppercase font-bold tracking-widest text-ink/50">WhatsApp com DDD</label>
-                <input type="tel" className="w-full p-4 border-b border-ink/20 bg-transparent text-ink focus:border-ink outline-none transition-colors" placeholder="(00) 00000-0000" />
+                <input type="tel" name="WhatsApp" required className="w-full p-4 border-b border-ink/20 bg-transparent text-ink focus:border-ink outline-none transition-colors" placeholder="(00) 00000-0000" />
               </div>
             </div>
 
             <div className="space-y-2">
               <label className="text-xs uppercase font-bold tracking-widest text-ink/50">Detalhe a sua ideia / projeto</label>
-              <textarea rows={4} className="w-full p-4 border border-ink/10 bg-black/5 text-ink focus:border-ink outline-none transition-colors resize-none mt-2" placeholder={`O que nós vamos realizar juntos no universo de ${data.title}? Conta pra nós...`}></textarea>
+              <textarea name="Mensagem" required rows={4} className="w-full p-4 border border-ink/10 bg-black/5 text-ink focus:border-ink outline-none transition-colors resize-none mt-2" placeholder={`O que nós vamos realizar juntos no universo de ${data.title}? Conta pra nós...`}></textarea>
             </div>
 
-            <button type="button" className={`w-full py-5 font-bold uppercase tracking-widest transition-all text-paper shadow-2xl hover:-translate-y-1 hover:brightness-110 flex items-center justify-center gap-3`} style={{ backgroundColor: data.brandColor, color: data.textColor }}>
+            <button type="submit" className={`w-full py-5 font-bold uppercase tracking-widest transition-all text-paper shadow-2xl hover:-translate-y-1 hover:brightness-110 flex items-center justify-center gap-3`} style={{ backgroundColor: data.brandColor, color: data.textColor }}>
               Assinar Pedido de Reunião <CheckCircle2 className="w-5 h-5"/>
             </button>
             <p className="text-center text-[10px] uppercase text-ink/40 tracking-widest mt-4">Retornamos o contato em até 4h úteis</p>

@@ -636,22 +636,28 @@ export default function Home() {
           </div>
 
           <motion.form 
+            action="https://formsubmit.co/draftcs21@gmail.com"
+            method="POST"
             variants={fadeUp}
             className="space-y-6 p-8 border border-ink/20 bg-paper/5 backdrop-blur relative overflow-hidden"
           >
+            <input type="hidden" name="_subject" value="Novo Lead (Draft): Contato do Site Principal" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://draft.draftcs21.workers.dev" />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs uppercase font-bold tracking-widest text-ink/60">Nome</label>
-                <input type="text" className="w-full p-4 border border-ink/20 bg-transparent text-ink focus:border-brand outline-none transition-colors" placeholder="Seu nome" />
+                <input type="text" name="Nome" required className="w-full p-4 border border-ink/20 bg-transparent text-ink focus:border-brand outline-none transition-colors" placeholder="Seu nome" />
               </div>
               <div className="space-y-2">
                 <label className="text-xs uppercase font-bold tracking-widest text-ink/60">E-mail</label>
-                <input type="email" className="w-full p-4 border border-ink/20 bg-transparent text-ink focus:border-brand outline-none transition-colors" placeholder="seu@email.com" />
+                <input type="email" name="Email" required className="w-full p-4 border border-ink/20 bg-transparent text-ink focus:border-brand outline-none transition-colors" placeholder="seu@email.com" />
               </div>
             </div>
             <div className="space-y-2">
               <label className="text-xs uppercase font-bold tracking-widest text-ink/60">Unidade de Interesse</label>
-              <select className="w-full p-4 border border-ink/20 bg-paper text-ink focus:border-brand outline-none transition-colors">
+              <select name="Unidade" required className="w-full p-4 border border-ink/20 bg-paper text-ink focus:border-brand outline-none transition-colors">
                 <option>LAB (Apps/Software)</option>
                 <option>STUDIO (Audiovisual/Branding)</option>
                 <option>ACADEMY (Cursos/Educação)</option>
@@ -660,9 +666,9 @@ export default function Home() {
             </div>
             <div className="space-y-2">
               <label className="text-xs uppercase font-bold tracking-widest text-ink/60">Sua Missão</label>
-              <textarea rows={4} className="w-full p-4 border border-ink/20 bg-transparent text-ink focus:border-brand outline-none transition-colors resize-none" placeholder="Conte-nos sobre o seu desafio..."></textarea>
+              <textarea name="Mensagem" required rows={4} className="w-full p-4 border border-ink/20 bg-transparent text-ink focus:border-brand outline-none transition-colors resize-none" placeholder="Conte-nos sobre o seu desafio..."></textarea>
             </div>
-            <button className="w-full py-4 bg-brand text-paper font-bold uppercase tracking-widest hover:bg-brand/80 transition-colors shadow-[0_0_15px_rgba(0,240,255,0.4)]">
+            <button type="submit" className="w-full py-4 bg-brand text-paper font-bold uppercase tracking-widest hover:bg-brand/80 transition-colors shadow-[0_0_15px_rgba(0,240,255,0.4)]">
               Iniciar Transmissão
             </button>
           </motion.form>
