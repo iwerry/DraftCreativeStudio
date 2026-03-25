@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft, Rocket, Users, MonitorSmartphone } from "lucide-react";
 import { useEffect, useState } from "react";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -35,7 +36,10 @@ export default function SobrePage() {
             </div>
             <span className="font-bold uppercase tracking-widest text-xs">Menu Principal</span>
           </Link>
-          <img src="/draftlogo.svg" alt="Draft Logo" className="h-6 w-auto opacity-50 border border-transparent" />
+          <div className="flex items-center gap-4">
+            <img src="/draftlogo.svg" alt="Draft Logo" className="hidden md:block h-6 w-auto opacity-50 border border-transparent mr-2" />
+            <LanguageSwitcher />
+          </div>
         </div>
       </nav>
 

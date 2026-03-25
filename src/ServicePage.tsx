@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, Video, Code2, GraduationCap, ChevronRight, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const SERVICES_DATA: Record<string, any> = {
   studio: {
@@ -86,7 +87,10 @@ export default function ServicePage() {
             </div>
             <span className="font-bold uppercase tracking-widest text-xs">Voltar</span>
           </Link>
-          <img src="/draftlogo.svg" alt="Draft Logo" className="h-6 w-auto opacity-50" />
+          <div className="flex items-center gap-4">
+            <img src="/draftlogo.svg" alt="Draft Logo" className="hidden md:block h-6 w-auto opacity-50 mr-2" />
+            <LanguageSwitcher />
+          </div>
         </div>
       </nav>
 

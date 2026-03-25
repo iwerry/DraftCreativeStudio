@@ -1,6 +1,6 @@
 <div align="center">
   <img src="public/draftlogo.svg" alt="Draft Creative Studio Logo" width="250"/>
-  <h1>Draft Studio IA</h1>
+  <h1>Draft Creative Studio LTDA</h1>
   <p><strong>A convergência perfeita entre Arte Audiovisual, Código High-End e Inteligência Artificial.</strong></p>
 </div>
 
