@@ -232,6 +232,9 @@ export default function Home() {
               {item}
             </a>
           ))}
+          <a href="https://wa.me/556198905720" target="_blank" rel="noreferrer" className="mt-8 border border-brand text-brand hover:bg-brand hover:text-paper px-8 py-4 font-bold uppercase text-lg transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)]" onClick={() => setIsMenuOpen(false)}>
+            Vamos Conversar
+          </a>
         </motion.div>
       )}
 
