@@ -49,40 +49,40 @@ const SERVICES = [
 ];
 
 const SKILLS = [
-  { role: "Fotografia", desc: "Capturando a essência da sua marca com direção de arte impecável e qualidade de cinema.", bgImage: "https://picsum.photos/seed/photo/800/600" },
-  { role: "Filmagem", desc: "Produção de vídeo premium para comerciais, coberturas e conteúdo institucional de alto impacto.", bgImage: "https://picsum.photos/seed/film/800/600" },
-  { role: "Edição de Vídeo", desc: "Ritmo, cor e storytelling visual que prendem a atenção do primeiro ao último segundo.", bgImage: "https://picsum.photos/seed/edit/800/600" },
-  { role: "Motion Design", desc: "Animações e grafismos dinâmicos que dão vida, fluidez e energia moderna à sua comunicação.", bgImage: "https://picsum.photos/seed/motion/800/600" },
-  { role: "Design & Branding", desc: "Construção de identidades visuais de alto impacto corporativo. Criação técnica de logotipos, produtos digitais e campanhas offline (Outdoors e Flyers).", bgImage: "https://picsum.photos/seed/branding/800/600" },
-  { role: "UX Design p/ App", desc: "Interfaces centradas no usuário, garantindo uma navegação intuitiva em plataformas Android e iOS.", bgImage: "https://picsum.photos/seed/ui/800/600" },
-  { role: "Marketing Digital", desc: "Estratégias de ponta, copy focada em resultados reais e campanhas inteligentes de tráfego.", bgImage: "https://picsum.photos/seed/marketing/800/600" },
-  { role: "Script", desc: "Roteiros cirúrgicos e magnéticos projetados para reter a máxima atenção nas redes sociais e converter engajamento em vendas e também em formato Master Scenes usados no Cinema.", bgImage: "https://picsum.photos/seed/script/800/600" }
+  { role: "Fotografia", desc: "Capturando a essência da sua marca com direção de arte impecável e qualidade de cinema.", bgImage: "/studio/skill_photo.webp" },
+  { role: "Filmagem", desc: "Produção de vídeo premium para comerciais, coberturas e conteúdo institucional de alto impacto.", bgImage: "/studio/skill_film.webp" },
+  { role: "Edição de Vídeo", desc: "Ritmo, cor e storytelling visual que prendem a atenção do primeiro ao último segundo.", bgImage: "/studio/skill_edit.webp" },
+  { role: "Motion Design", desc: "Animações e grafismos dinâmicos que dão vida, fluidez e energia moderna à sua comunicação.", bgImage: "/studio/skill_motion.webp" },
+  { role: "Design & Branding", desc: "Construção de identidades visuais de alto impacto corporativo. Criação técnica de logotipos, produtos digitais e campanhas offline (Outdoors e Flyers).", bgImage: "/studio/skill_branding.webp" },
+  { role: "UX Design p/ App", desc: "Interfaces centradas no usuário, garantindo uma navegação intuitiva em plataformas Android e iOS.", bgImage: "/studio/skill_ui.webp" },
+  { role: "Marketing Digital", desc: "Estratégias de ponta, copy focada em resultados reais e campanhas inteligentes de tráfego.", bgImage: "/studio/skill_marketing.webp" },
+  { role: "Script", desc: "Roteiros cirúrgicos e magnéticos projetados para reter a máxima atenção nas redes sociais e converter engajamento em vendas e também em formato Master Scenes usados no Cinema.", bgImage: "/studio/skill_script.webp" }
 ];
 
 const HERO_SLIDES = [
   {
     id: "studio",
-    title: ["Draft", "Creative", "Studio."],
+    title: [<span className="notranslate" key="draft">Draft</span>, "Creative", "Studio."],
     subtitle: "Produção audiovisual premium, design estratégico e storytelling visual que transformam marcas em legados eternos.",
     color: "text-brand",
     glowLight: "rgba(0,240,255,0.4)",
-    fallbackImg: "https://picsum.photos/seed/studio_brand_dark/1920/1080"
+    fallbackImg: "/studio/hero_1.webp"
   },
   {
     id: "lab",
-    title: ["Draft", "Lab."],
+    title: [<span className="notranslate" key="draft">Draft</span>, "Lab."],
     subtitle: "Desenvolvimento de alta performance para Apps, Web e Games. Transformamos ideias completas em experiências digitais épicas e responsivas.",
     color: "text-[#00FF41]",
     glowLight: "rgba(0,255,65,0.3)",
-    fallbackImg: "https://picsum.photos/seed/lab_code_dark/1920/1080"
+    fallbackImg: "/studio/hero_2.webp"
   },
   {
     id: "academy",
-    title: ["Draft", "Academy."],
+    title: [<span className="notranslate" key="draft">Draft</span>, "Academy."],
     subtitle: "Em breve: Cursos práticos de Fotografia, Filmagem, Edição de Vídeo e Motion. Aprenda com os maiores especialistas do mercado audiovisual.",
     color: "text-[#FFD700]",
     glowLight: "rgba(255,215,0,0.3)",
-    fallbackImg: "https://picsum.photos/seed/academy_class_dark/1920/1080"
+    fallbackImg: "/studio/hero_3.webp"
   }
 ];
 
@@ -90,22 +90,22 @@ const PROJECTS = [
   {
     title: "Urban Flow",
     category: "STUDIO",
-    image: "https://picsum.photos/seed/urban/800/600"
+    image: "/studio/proj_urban.webp"
   },
   {
     title: "Nova Tech",
     category: "LAB",
-    image: "https://picsum.photos/seed/tech/800/600"
+    image: "/studio/proj_tech.webp"
   },
   {
     title: "Edu Platform",
     category: "ACADEMY",
-    image: "https://picsum.photos/seed/edu/800/600"
+    image: "/studio/proj_edu.webp"
   },
   {
     title: "Zenith Game",
     category: "LAB",
-    image: "https://picsum.photos/seed/app/800/600"
+    image: "/studio/proj_app.webp"
   }
 ];
 

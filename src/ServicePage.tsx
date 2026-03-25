@@ -14,7 +14,7 @@ const SERVICES_DATA: Record<string, any> = {
     brandColor: "#8E9AAF",
     textColor: "text-[#0A0F1E]",
     glowLight: "rgba(142, 154, 175, 0.4)",
-    coverUrl: "https://picsum.photos/seed/studio_brand_dark/1920/1080",
+    coverUrl: "/studio/cover_studio.webp",
     fields: ["Fotografia Premium", "Trabalho Audiovisual / Vídeo", "Motion Design 2D/3D", "Identidade Visual Corporativa", "Cobertura de Evento"]
   },
   lab: {
@@ -26,7 +26,7 @@ const SERVICES_DATA: Record<string, any> = {
     brandColor: "#00FF41",
     textColor: "text-[#0A0F1E]",
     glowLight: "rgba(0, 255, 65, 0.3)",
-    coverUrl: "https://picsum.photos/seed/lab_code_dark/1920/1080",
+    coverUrl: "/studio/cover_lab.webp",
     fields: ["App Android e iOS", "Plataforma Web Especialista", "Desenvolvimento de Jogos", "Design UI/UX", "Automatização / IA"]
   },
   academy: {
@@ -38,7 +38,7 @@ const SERVICES_DATA: Record<string, any> = {
     brandColor: "#FFD700",
     textColor: "text-[#0A0F1E]",
     glowLight: "rgba(255, 215, 0, 0.3)",
-    coverUrl: "https://picsum.photos/seed/academy_class_dark/1920/1080",
+    coverUrl: "/studio/cover_academy.webp",
     fields: ["Curso de Captação & Fotografia", "Formação de Edição Profissional", "Masterclass Desvendando IA", "Mentorias Individuais", "Base de Front-End e UX"]
   }
 };
