@@ -1,0 +1,19 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#060E1F"/>
+  <rect x="220" y="220" width="1160" height="460" rx="24" fill="#091629" stroke="#1A3D68"/>
+  <rect x="260" y="270" width="1080" height="260" rx="12" fill="#0A1C33" stroke="#19385B"/>
+  <path d="M300 400H1300" stroke="#21496E" stroke-width="2"/>
+  <g opacity="0.8">
+    <rect x="320" y="316" width="96" height="168" rx="8" fill="#0F2F53"/>
+    <rect x="440" y="338" width="72" height="146" rx="8" fill="#143A63"/>
+    <rect x="536" y="300" width="120" height="184" rx="8" fill="#0D2848"/>
+    <rect x="680" y="355" width="54" height="129" rx="8" fill="#1B4A7A"/>
+    <rect x="760" y="324" width="80" height="160" rx="8" fill="#0F2F53"/>
+    <rect x="866" y="348" width="118" height="136" rx="8" fill="#153D67"/>
+    <rect x="1008" y="315" width="102" height="169" rx="8" fill="#0D2848"/>
+    <rect x="1134" y="335" width="88" height="149" rx="8" fill="#1B4A7A"/>
+  </g>
+  <circle cx="1260" cy="620" r="18" fill="#00F0FF"/>
+  <text x="120" y="150" fill="#00F0FF" fill-opacity="0.75" font-family="monospace" font-size="42">03</text>
+  <text x="120" y="820" fill="#8E9AAF" font-family="monospace" font-size="50" letter-spacing="3">EDITING + MOTION</text>
+</svg>

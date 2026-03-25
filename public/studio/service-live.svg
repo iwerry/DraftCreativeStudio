@@ -1,0 +1,16 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#050D1D"/>
+  <g opacity="0.52" stroke="#15345C" stroke-width="1">
+    <path d="M0 150H1600"/><path d="M0 300H1600"/><path d="M0 450H1600"/><path d="M0 600H1600"/><path d="M0 750H1600"/>
+    <path d="M160 0V900"/><path d="M320 0V900"/><path d="M480 0V900"/><path d="M640 0V900"/><path d="M800 0V900"/><path d="M960 0V900"/><path d="M1120 0V900"/><path d="M1280 0V900"/><path d="M1440 0V900"/>
+  </g>
+  <rect x="300" y="250" width="1000" height="390" rx="24" fill="#091A34" stroke="#1D426E"/>
+  <rect x="350" y="300" width="420" height="290" rx="14" fill="#0C2547" stroke="#295A89"/>
+  <path d="M430 380L580 445L430 510V380Z" fill="#00F0FF" fill-opacity="0.82"/>
+  <rect x="820" y="300" width="430" height="70" rx="10" fill="#102C4F"/>
+  <rect x="820" y="390" width="430" height="70" rx="10" fill="#102C4F"/>
+  <rect x="820" y="480" width="430" height="70" rx="10" fill="#102C4F"/>
+  <circle cx="1230" cy="205" r="16" fill="#00F0FF"/>
+  <text x="120" y="150" fill="#00F0FF" fill-opacity="0.75" font-family="monospace" font-size="42">04</text>
+  <text x="120" y="820" fill="#8E9AAF" font-family="monospace" font-size="50" letter-spacing="3">LIVE BROADCAST</text>
+</svg>

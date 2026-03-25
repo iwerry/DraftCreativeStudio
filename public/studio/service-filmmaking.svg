@@ -1,0 +1,22 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071022"/>
+      <stop offset="1" stop-color="#040912"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.5" stroke="#17304F" stroke-width="1">
+    <path d="M0 160H1600"/><path d="M0 320H1600"/><path d="M0 480H1600"/><path d="M0 640H1600"/><path d="M0 800H1600"/>
+    <path d="M200 0V900"/><path d="M400 0V900"/><path d="M600 0V900"/><path d="M800 0V900"/><path d="M1000 0V900"/><path d="M1200 0V900"/><path d="M1400 0V900"/>
+  </g>
+  <g>
+    <rect x="460" y="300" width="700" height="300" rx="24" fill="#0B1A36" stroke="#224672"/>
+    <rect x="380" y="360" width="90" height="180" rx="12" fill="#10284D"/>
+    <circle cx="860" cy="450" r="140" fill="#0D2142" stroke="#00F0FF" stroke-opacity="0.35" stroke-width="4"/>
+    <circle cx="860" cy="450" r="70" fill="#0A1830" stroke="#8E9AAF" stroke-width="2"/>
+    <rect x="1160" y="380" width="70" height="140" rx="10" fill="#163763"/>
+  </g>
+  <text x="120" y="150" fill="#00F0FF" fill-opacity="0.75" font-family="monospace" font-size="42">02</text>
+  <text x="120" y="820" fill="#8E9AAF" font-family="monospace" font-size="50" letter-spacing="3">FILMMAKING</text>
+</svg>
