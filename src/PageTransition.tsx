@@ -1,63 +1,66 @@
 import { motion } from "motion/react";
 import { ReactNode } from "react";
 
-const slideLayer1 = {
+// Each layer sweeps: bottom → covers screen → exits through top
+// Using keyframes so it's ONE continuous motion — never stops
+const makeLayer = (delay: number) => ({
   initial: { top: "100vh" },
-  animate: { top: "-100vh", transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] } },
-  exit: { top: ["100vh", "0vh"], transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] } }
-};
+  animate: {
+    top: ["100vh", "0vh", "-150vh"],
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+      delay,
+      times: [0, 0.35, 1],
+    },
+  },
+});
 
-const slideLayer2 = {
-  initial: { top: "100vh" },
-  animate: { top: "-100vh", transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.15 } },
-  exit: { top: ["100vh", "0vh"], transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.15 } }
-};
-
-const slideLayer3 = {
-  initial: { top: "100vh" },
-  animate: { top: "-100vh", transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.3 } },
-  exit: { top: ["100vh", "0vh"], transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.3 } }
-};
+const layer1 = makeLayer(0);      // Dark Navy
+const layer2 = makeLayer(0.08);   // Ink White
+const layer3 = makeLayer(0.16);   // Brand Cyan
 
 export default function PageTransition({ children }: { children: ReactNode }) {
-  // To avoid seeing the unstyled page enter instantly, we keep the page wrapped in an opacity fade
-  // while the sweeping rectangles move.
   return (
     <>
+      {/* Page content fades in after the wipe passes */}
       <motion.div
-        initial={{ opacity: 0, filter: "blur(10px)" }}
-        animate={{ opacity: 1, filter: "blur(0px)", transition: { duration: 0.6, delay: 0.5 } }}
-        exit={{ opacity: 0, filter: "blur(10px)", transition: { duration: 0.6 } }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.55, duration: 0.4 } }}
+        exit={{ opacity: 0, transition: { duration: 0.25 } }}
         className="w-full min-h-screen"
       >
         {children}
       </motion.div>
 
-      {/* Layer 1: Dark Navy */}
+      {/* Layer 1: Navy */}
       <motion.div
-        className="fixed left-0 w-full h-[150vh] bg-paper z-[9997] pointer-events-none"
-        variants={slideLayer1}
-        initial="initial"
-        animate="animate"
-        exit="exit"
+        className="fixed left-0 w-full h-[150vh] bg-paper z-[9997] pointer-events-none will-change-transform"
+        initial={layer1.initial}
+        animate={layer1.animate}
+        exit={{ opacity: 0, transition: { duration: 0 } }}
       />
-      {/* Layer 2: Ink White */}
+
+      {/* Layer 2: White */}
       <motion.div
-        className="fixed left-0 w-full h-[150vh] bg-ink z-[9998] pointer-events-none"
-        variants={slideLayer2}
-        initial="initial"
-        animate="animate"
-        exit="exit"
+        className="fixed left-0 w-full h-[150vh] bg-ink z-[9998] pointer-events-none will-change-transform"
+        initial={layer2.initial}
+        animate={layer2.animate}
+        exit={{ opacity: 0, transition: { duration: 0 } }}
       />
-      {/* Layer 3: Brand Cyan */}
+
+      {/* Layer 3: Cyan Brand */}
       <motion.div
-        className="fixed left-0 w-full h-[150vh] bg-brand z-[9999] pointer-events-none shadow-[0_0_50px_rgba(0,240,255,0.8)]"
-        variants={slideLayer3}
-        initial="initial"
-        animate="animate"
-        exit="exit"
+        className="fixed left-0 w-full h-[150vh] bg-brand z-[9999] pointer-events-none will-change-transform overflow-hidden"
+        initial={layer3.initial}
+        animate={layer3.animate}
+        exit={{ opacity: 0, transition: { duration: 0 } }}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-paper uppercase font-display text-4xl md:text-8xl tracking-tighter mix-blend-overlay opacity-30">
+        {/* "Draft" ghost watermark during wipe */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-5xl md:text-9xl uppercase tracking-tighter select-none pointer-events-none"
+          style={{ color: "rgba(0,15,30,0.15)", letterSpacing: "-0.05em" }}
+        >
           Draft
         </div>
       </motion.div>
