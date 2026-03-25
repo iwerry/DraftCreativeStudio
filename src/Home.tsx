@@ -62,7 +62,7 @@ const SKILLS = [
 const HERO_SLIDES = [
   {
     id: "studio",
-    title: [<span className="notranslate" key="draft">Draft</span>, "Creative", "Studio."],
+    title: ["Draft", "Creative", "Studio."],
     subtitle: "Produção audiovisual premium, design estratégico e storytelling visual que transformam marcas em legados eternos.",
     color: "text-brand",
     glowLight: "rgba(0,240,255,0.4)",
@@ -70,7 +70,7 @@ const HERO_SLIDES = [
   },
   {
     id: "lab",
-    title: [<span className="notranslate" key="draft">Draft</span>, "Lab."],
+    title: ["Draft", "Lab."],
     subtitle: "Desenvolvimento de alta performance para Apps, Web e Games. Transformamos ideias completas em experiências digitais épicas e responsivas.",
     color: "text-[#00FF41]",
     glowLight: "rgba(0,255,65,0.3)",
@@ -78,7 +78,7 @@ const HERO_SLIDES = [
   },
   {
     id: "academy",
-    title: [<span className="notranslate" key="draft">Draft</span>, "Academy."],
+    title: ["Draft", "Academy."],
     subtitle: "Em breve: Cursos práticos de Fotografia, Filmagem, Edição de Vídeo e Motion. Aprenda com os maiores especialistas do mercado audiovisual.",
     color: "text-[#FFD700]",
     glowLight: "rgba(255,215,0,0.3)",
@@ -305,7 +305,9 @@ export default function Home() {
                         }}
                         className="block origin-top-left"
                       >
-                        {line.includes('.') ? (
+                        {line === 'Draft' ? (
+                          <span className="notranslate">Draft</span>
+                        ) : line.includes('.') ? (
                           <>
                             {line.replace('.', '')}
                             <span className={HERO_SLIDES[activeSlide].color}>.</span>
