@@ -204,9 +204,9 @@ export default function Home() {
                 {item}
               </a>
             ))}
-            <button className="border border-brand text-brand hover:bg-brand hover:text-paper px-6 py-2 font-bold uppercase text-xs transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)] hover:shadow-[0_0_25px_rgba(0,240,255,0.8)]">
+            <a href="https://wa.me/556198905720" target="_blank" rel="noreferrer" className="flex items-center justify-center border border-brand text-brand hover:bg-brand hover:text-paper px-6 py-2 font-bold uppercase text-xs transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)] hover:shadow-[0_0_25px_rgba(0,240,255,0.8)]">
               Vamos Conversar
-            </button>
+            </a>
           </div>
 
           <button className="md:hidden text-brand" onClick={() => setIsMenuOpen(!isMenuOpen)}>
