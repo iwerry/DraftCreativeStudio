@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowLeft, Rocket, Users, MonitorSmartphone } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import PageTransition from "./PageTransition";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,13 +16,7 @@ export default function SobrePage() {
   }, []);
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, filter: "blur(5px)" }}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -20, filter: "blur(5px)" }}
-      transition={{ duration: 0.4 }}
-      className="min-h-[100vh] bg-paper text-ink font-sans relative overflow-hidden"
-    >
+    <PageTransition>
 
       {/* Navegação Simplificada para a página secundária */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-paper/90 backdrop-blur-md border-b border-ink/10 py-6">
@@ -88,6 +83,6 @@ export default function SobrePage() {
 
         </motion.div>
       </section>
-    </motion.div>
+    </PageTransition>
   );
 }

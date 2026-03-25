@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, Video, Code2, GraduationCap, ChevronRight, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import PageTransition from "./PageTransition";
 
 const SERVICES_DATA: Record<string, any> = {
   studio: {
@@ -66,13 +67,7 @@ export default function ServicePage() {
   if (!data) return <div className="min-h-screen flex items-center justify-center bg-paper text-ink">Serviço não encontrado.</div>;
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, filter: "blur(5px)" }}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
-      exit={{ opacity: 0, y: -20, filter: "blur(5px)" }}
-      transition={{ duration: 0.4 }}
-      className="min-h-screen bg-paper text-ink selection:bg-brand selection:text-paper font-sans"
-    >
+    <PageTransition>
 
       {/* Navegação Simplificada para a página secundária */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-paper/90 backdrop-blur-md border-b border-ink/10 py-6">
@@ -191,6 +186,6 @@ export default function ServicePage() {
           </form>
         </motion.div>
       </section>
-    </motion.div>
+    </PageTransition>
   );
 }
