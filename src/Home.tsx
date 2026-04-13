@@ -628,9 +628,8 @@ export default function Home() {
 
             <motion.div variants={staggerContainer} className="space-y-6">
               {[
-                { label: "E-mail", text: "hello@draftstudio.com", icon: <Mail className="w-5 h-5" />, link: null },
                 { label: "WhatsApp Direto", text: "+55 61 9890-5720", icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>, link: "https://wa.me/556198905720", isBrand: true },
-                { label: "Social", text: "@draftcreative.studio", icon: <Instagram className="w-5 h-5" />, link: "https://instagram.com/draftcreative.studio" }
+                { label: "Social", text: "@draftcreativestudio", icon: <Instagram className="w-5 h-5" />, link: "https://www.instagram.com/draftcreativestudio/" }
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex items-center gap-4 group">
                   <div className={`w-12 h-12 rounded-full border ${item.isBrand ? 'border-[rgb(37,211,102)]/30 bg-[rgb(37,211,102)]/10 text-[rgb(37,211,102)] shadow-[0_0_15px_rgba(37,211,102,0.3)] group-hover:bg-[rgb(37,211,102)] group-hover:text-paper cursor-pointer' : 'border-brand/30 text-brand'} flex items-center justify-center transition-all`}>
