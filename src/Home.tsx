@@ -657,7 +657,7 @@ export default function Home() {
           >
             <input type="hidden" name="_subject" value="Novo Lead (Draft): Contato do Site Principal" />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://draft.draftcs21.workers.dev" />
+            <input type="hidden" name="_next" value="https://draftcreative.com.br" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
