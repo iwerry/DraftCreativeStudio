@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import PageTransition from "./PageTransition";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Instagram } from "lucide-react";
 import { PROJECTS } from "./projectsData";
 import { useState, useEffect } from "react";
 
@@ -127,6 +127,13 @@ export default function ProjetosPage() {
             <img src="/draftlogo.svg" alt="Draft Logo" className="h-10 w-auto opacity-80 group-hover:opacity-100 transition-all duration-300" />
           </Link>
           <p className="text-ink/40 text-xs text-center md:text-left">© 2026 Draft Creative Studio Ltda.</p>
+          <div className="flex gap-8 text-xs font-bold uppercase tracking-widest text-ink/60">
+            <a href="https://www.instagram.com/draftcreativestudio/" target="_blank" rel="noreferrer" className="hover:text-brand transition-colors flex items-center gap-2">
+              <Instagram className="w-4 h-4" /> Instagram
+            </a>
+            <a href="#" className="hover:text-brand transition-colors">Privacidade</a>
+            <a href="#" className="hover:text-brand transition-colors">Termos</a>
+          </div>
         </div>
       </footer>
     </PageTransition>

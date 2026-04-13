@@ -705,6 +705,9 @@ export default function Home() {
           <p className="text-ink/40 text-xs text-center md:text-left">© 2026 Draft Creative Studio Ltda.</p>
 
           <div className="flex gap-8 text-xs font-bold uppercase tracking-widest text-ink/60">
+            <a href="https://www.instagram.com/draftcreativestudio/" target="_blank" rel="noreferrer" className="hover:text-brand transition-colors flex items-center gap-2">
+              <Instagram className="w-4 h-4" /> Instagram
+            </a>
             <a href="#" className="hover:text-brand transition-colors">Privacidade</a>
             <a href="#" className="hover:text-brand transition-colors">Termos</a>
           </div>
