@@ -99,9 +99,11 @@ const PROJECTS = [
     description: "O Projeto Entre Elas é uma iniciativa voltada para o acolhimento de mulheres em situação de vulnerabilidade e vítimas de violência doméstica, oferecendo suporte jurídico, psicológico e ações de resgate da autoestima. O programa busca fortalecer a rede de proteção feminina, promovendo a autonomia e a reinserção social através de cursos e assistência especializada.\n\nO que nós da Draft estamos fazendo para este projeto: Desenvolvimento Web, Audiovisual, Fotografia, Filmagem e Redes Sociais."
   },
   {
-    title: "Nova Tech",
-    category: "LAB",
-    image: "/studio/proj_tech.webp"
+    title: "Instituto Mais Brasília",
+    category: "STUDIO & LAB",
+    image: "/studio/proj_tech.jpg",
+    link: "https://www.institutomaisbrasilia.org.br",
+    description: "O Instituto Mais Brasília é uma organização sem fins lucrativos dedicada ao desenvolvimento social e humano do Distrito Federal, promovendo projetos educacionais, culturais e de capacitação profissional para comunidades em situação de vulnerabilidade.\n\nO que nós da Draft estamos fazendo para este projeto: Desenvolvimento Web, Identidade Visual, Audiovisual e Redes Sociais."
   },
   {
     title: "Edu Platform",
