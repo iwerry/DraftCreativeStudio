@@ -92,9 +92,11 @@ const HERO_SLIDES = [
 
 const PROJECTS = [
   {
-    title: "Urban Flow",
-    category: "STUDIO",
-    image: "/studio/proj_urban.webp"
+    title: "Entre Elas",
+    category: "STUDIO & LAB",
+    image: "/studio/proj_entreelas.jpg",
+    link: "https://www.projetoentreelas.com.br",
+    description: "Desenvolvimento Web, Audiovisual, Fotografia, Filmagem e Redes Sociais."
   },
   {
     title: "Nova Tech",
@@ -553,34 +555,56 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {PROJECTS.map((project, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                className="group cursor-pointer"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden border border-ink/20 mb-6 bg-paper/5">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-brand/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none mix-blend-overlay"></div>
+            {PROJECTS.map((project: any, i) => {
+              const content = (
+                <>
+                  <div className="relative aspect-[4/3] overflow-hidden border border-ink/20 mb-6 bg-paper/5">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-brand/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none mix-blend-overlay"></div>
 
-                  {/* Categoria Badge */}
-                  <div className="absolute top-4 left-4 border border-paper bg-paper/20 backdrop-blur px-3 py-1 text-xs font-bold uppercase tracking-widest text-paper">
-                    {project.category}
+                    {/* Categoria Badge */}
+                    <div className="absolute top-4 left-4 border border-paper bg-paper/20 backdrop-blur px-3 py-1 text-xs font-bold uppercase tracking-widest text-paper">
+                      {project.category}
+                    </div>
                   </div>
-                </div>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-3xl font-display uppercase tracking-tight text-brand">{project.title}</h3>
+                  <div className="flex justify-between items-start">
+                    <div className="pr-4">
+                      <h3 className="text-3xl font-display uppercase tracking-tight text-brand">{project.title}</h3>
+                      {project.description && (
+                        <p className="text-sm text-ink/60 mt-2 font-sans line-clamp-2">{project.description}</p>
+                      )}
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-brand -rotate-45 group-hover:rotate-0 transition-transform duration-300 flex-shrink-0" />
                   </div>
-                  <ArrowRight className="w-6 h-6 text-brand -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-                </div>
-              </motion.div>
-            ))}
+                </>
+              );
+
+              return project.link ? (
+                <motion.a
+                  key={i}
+                  variants={fadeUp}
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group cursor-pointer block"
+                >
+                  {content}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  className="group cursor-pointer block"
+                >
+                  {content}
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </section>
