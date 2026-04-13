@@ -103,7 +103,7 @@ const PROJECTS = [
     category: "STUDIO & LAB",
     image: "/studio/proj_tech.jpg",
     link: "https://www.institutomaisbrasilia.org.br",
-    description: "O Instituto Mais Brasília é uma organização sem fins lucrativos dedicada ao desenvolvimento social e humano do Distrito Federal, promovendo projetos educacionais, culturais e de capacitação profissional para comunidades em situação de vulnerabilidade.\n\nO que nós da Draft estamos fazendo para este projeto: Desenvolvimento Web, Identidade Visual, Audiovisual e Redes Sociais."
+    description: "O Instituto Mais Brasília fortalece a cidadania e o desenvolvimento social no DF, unindo transparência, ética e inovação para transformar realidades. Atua em causas como empoderamento feminino e inclusão, sendo um elo entre tradição institucional e soluções contemporâneas.\n\nO que nós da Draft estamos fazendo para este projeto: Desenvolvimento Web, Identidade Visual, Audiovisual e Redes Sociais."
   },
   {
     title: "Edu Platform",
