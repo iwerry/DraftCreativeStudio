@@ -106,9 +106,11 @@ const PROJECTS = [
     description: "O Instituto Mais Brasília fortalece a cidadania e o desenvolvimento social no DF, unindo transparência, ética e inovação para transformar realidades. Atua em causas como empoderamento feminino e inclusão, sendo um elo entre tradição institucional e soluções contemporâneas.\n\nO que nós da Draft estamos fazendo para este projeto: Desenvolvimento Web, Identidade Visual, Audiovisual e Redes Sociais."
   },
   {
-    title: "Edu Platform",
-    category: "ACADEMY",
-    image: "/studio/proj_edu.webp"
+    title: "Nexus Intelligence",
+    category: "LAB",
+    image: "/studio/proj_edu.jpg",
+    link: "https://nexus-phi-sand.vercel.app/",
+    description: "O Nexus Intelligence é uma ferramenta de monitoramento avançado desenvolvida para conectar Jornalistas e Pesquisadores à informação global em tempo real. Facilita a descoberta de matérias, notícias e publicações de todos os lugares do mundo, agilizando o processo de pauta e pesquisa investigativa.\n\nO que nós da Draft desenvolvemos: Sistema de monitoramento RSS global, interface para jornalistas, sincronização contínua de feeds e integração com banco de dados Neon Postgres."
   },
   {
     title: "Zenith Game",
