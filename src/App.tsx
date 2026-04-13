@@ -3,6 +3,7 @@ import { AnimatePresence } from "motion/react";
 import Home from "./Home";
 import ServicePage from "./ServicePage";
 import SobrePage from "./SobrePage";
+import ProjetosPage from "./ProjetosPage";
 
 export default function App() {
   const location = useLocation();
@@ -12,6 +13,7 @@ export default function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<SobrePage />} />
+        <Route path="/projetos" element={<ProjetosPage />} />
         <Route path="/:serviceId" element={<ServicePage />} />
       </Routes>
     </AnimatePresence>

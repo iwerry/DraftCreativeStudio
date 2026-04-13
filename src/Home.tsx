@@ -24,6 +24,7 @@ import {
 import { useState, useEffect } from "react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import PageTransition from "./PageTransition";
+import { PROJECTS } from "./projectsData";
 
 const SERVICES = [
   {
@@ -90,35 +91,7 @@ const HERO_SLIDES = [
   }
 ];
 
-const PROJECTS = [
-  {
-    title: "Entre Elas",
-    category: "STUDIO & LAB",
-    image: "/studio/proj_entreelas.jpg",
-    link: "https://www.projetoentreelas.com.br",
-    description: "O Projeto Entre Elas é uma iniciativa voltada para o acolhimento de mulheres em situação de vulnerabilidade e vítimas de violência doméstica, oferecendo suporte jurídico, psicológico e ações de resgate da autoestima. O programa busca fortalecer a rede de proteção feminina, promovendo a autonomia e a reinserção social através de cursos e assistência especializada.\n\nO que nós da Draft estamos fazendo para este projeto: Desenvolvimento Web, Audiovisual, Fotografia, Filmagem e Redes Sociais."
-  },
-  {
-    title: "Instituto Mais Brasília",
-    category: "STUDIO & LAB",
-    image: "/studio/proj_tech.jpg",
-    link: "https://www.institutomaisbrasilia.org.br",
-    description: "O Instituto Mais Brasília fortalece a cidadania e o desenvolvimento social no DF, unindo transparência, ética e inovação para transformar realidades. Atua em causas como empoderamento feminino e inclusão, sendo um elo entre tradição institucional e soluções contemporâneas.\n\nO que nós da Draft estamos fazendo para este projeto: Desenvolvimento Web, Identidade Visual, Audiovisual e Redes Sociais."
-  },
-  {
-    title: "Nexus Intelligence",
-    category: "LAB",
-    image: "/studio/proj_edu.jpg",
-    link: "https://nexus-phi-sand.vercel.app/",
-    description: "O Nexus Intelligence é uma ferramenta de monitoramento avançado desenvolvida para conectar Jornalistas e Pesquisadores à informação global em tempo real. Facilita a descoberta de matérias, notícias e publicações de todos os lugares do mundo, agilizando o processo de pauta e pesquisa investigativa.\n\nO que nós da Draft desenvolvemos: Sistema de monitoramento RSS global, interface para jornalistas, sincronização contínua de feeds e integração com banco de dados Neon Postgres."
-  },
-  {
-    title: "Brasília Grill Fest",
-    category: "STUDIO",
-    image: "/studio/proj_app.jpg",
-    description: "Um dos maiores festivais gastronômicos a céu aberto já realizados no Distrito Federal. O Brasília Grill Fest levou cultura, sabor e entretenimento para as cidades satélites de Brasília — quebrando fronteiras e democratizando o acesso à gastronomia de alto nível.\n\nCom palcos ao vivo, bandas e artistas locais, artesanato regional, cervejas artesanais geladas e uma multidão vibrante, o evento criou memórias afetivas e reforçou o orgulho de quem vive nas regiões administrativas do DF.\n\nEm breve: A próxima edição do Grill Fest promete ser ainda maior. Novos bairros, novos palcos, mesma energia — com a Draft Creative Studio por trás de toda a identidade visual, comunicação e produção audiovisual do evento."
-  }
-];
+
 
 // Reusable Framer Motion Variants for entire site consistency
 const fadeUp = {
@@ -531,9 +504,9 @@ export default function Home() {
       </section>
 
       {/* Work Section */}
-      <section id="projetos" className="py-32 px-6 overflow-hidden">
+      <section id="projetos" className="py-32 overflow-hidden">
         <motion.div 
-          className="max-w-7xl mx-auto"
+          className="max-w-7xl mx-auto px-6"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
@@ -554,15 +527,20 @@ export default function Home() {
               </div>
               <motion.p variants={fadeUp} className="text-ink/60 text-lg mt-4 max-w-md">Uma amostra da simbiose entre estética, código e aprendizado.</motion.p>
             </div>
-            <motion.button variants={fadeUp} className="px-8 py-4 border border-brand/50 text-brand hover:bg-brand hover:text-paper transition-all uppercase font-bold tracking-widest text-sm shadow-[0_0_15px_rgba(0,240,255,0.2)]">
-              Ver Arquivo Completo
-            </motion.button>
+            <motion.div variants={fadeUp}>
+              <Link to="/projetos" className="inline-block px-8 py-4 border border-brand/50 text-brand hover:bg-brand hover:text-paper transition-all uppercase font-bold tracking-widest text-sm shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+                Ver Arquivo Completo
+              </Link>
+            </motion.div>
           </div>
+        </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {PROJECTS.map((project: any, i) => {
+        {/* Infinite Slider */}
+        <div className="relative w-full overflow-hidden flex pb-12 group mt-8">
+          <div className="flex animate-marquee group-hover:[animation-play-state:paused] gap-12 px-6">
+            {[...PROJECTS, ...PROJECTS].map((project: any, i) => {
               const content = (
-                <>
+                <div className="w-[85vw] md:w-[45vw] lg:w-[35vw] flex-shrink-0">
                   <div className="relative aspect-[4/3] overflow-hidden border border-ink/20 mb-6 bg-paper/5">
                     <img
                       src={project.image}
@@ -581,12 +559,12 @@ export default function Home() {
                     <div className="pr-4">
                       <h3 className="text-3xl font-display uppercase tracking-tight text-brand">{project.title}</h3>
                       {project.description && (
-                        <p className="text-sm text-ink/60 mt-2 font-sans whitespace-pre-line">{project.description}</p>
+                        <p className="text-sm text-ink/60 mt-2 font-sans whitespace-pre-line line-clamp-3">{project.description}</p>
                       )}
                     </div>
                     <ArrowRight className="w-6 h-6 text-brand -rotate-45 group-hover:rotate-0 transition-transform duration-300 flex-shrink-0" />
                   </div>
-                </>
+                </div>
               );
 
               return project.link ? (
@@ -611,7 +589,7 @@ export default function Home() {
               );
             })}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Contact Section */}
