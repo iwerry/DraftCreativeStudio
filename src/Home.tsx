@@ -113,14 +113,9 @@ const PROJECTS = [
     description: "O Nexus Intelligence é uma ferramenta de monitoramento avançado desenvolvida para conectar Jornalistas e Pesquisadores à informação global em tempo real. Facilita a descoberta de matérias, notícias e publicações de todos os lugares do mundo, agilizando o processo de pauta e pesquisa investigativa.\n\nO que nós da Draft desenvolvemos: Sistema de monitoramento RSS global, interface para jornalistas, sincronização contínua de feeds e integração com banco de dados Neon Postgres."
   },
   {
-    title: "Zenith Game",
-    category: "LAB",
-    image: "/studio/proj_app.jpg"
-  },
-  {
     title: "Brasília Grill Fest",
     category: "STUDIO",
-    image: "/studio/proj_grillfe.jpg",
+    image: "/studio/proj_app.jpg",
     description: "Um dos maiores festivais gastronômicos a céu aberto já realizados no Distrito Federal. O Brasília Grill Fest levou cultura, sabor e entretenimento para as cidades satélites de Brasília — quebrando fronteiras e democratizando o acesso à gastronomia de alto nível.\n\nCom palcos ao vivo, bandas e artistas locais, artesanato regional, cervejas artesanais geladas e uma multidão vibrante, o evento criou memórias afetivas e reforçou o orgulho de quem vive nas regiões administrativas do DF.\n\nEm breve: A próxima edição do Grill Fest promete ser ainda maior. Novos bairros, novos palcos, mesma energia — com a Draft Creative Studio por trás de toda a identidade visual, comunicação e produção audiovisual do evento."
   }
 ];
