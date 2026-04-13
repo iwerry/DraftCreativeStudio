@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
+
 export function LanguageSwitcher() {
+  const { i18n } = useTranslation();
+
   const switchLang = (lang: string) => {
-    document.cookie = `googtrans=/pt/${lang}; path=/`;
-    document.cookie = `googtrans=/pt/${lang}; path=/; domain=` + window.location.hostname;
-    window.location.reload();
+    i18n.changeLanguage(lang);
   };
 
   return (
