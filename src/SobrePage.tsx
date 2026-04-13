@@ -39,24 +39,24 @@ export default function SobrePage() {
           show: { transition: { staggerChildren: 0.15 } }
         }}>
           <motion.h1 variants={fadeUp} className="font-display text-5xl md:text-8xl uppercase tracking-tighter mb-8 text-ink flex items-end gap-4">
-            DRAFT STUDIO <span className="text-brand text-6xl md:text-9xl py-2">IA</span>
+            DRAFT CREATIVE<span className="text-brand text-6xl md:text-9xl py-2">STUDIO</span>
           </motion.h1>
 
           <motion.div variants={fadeUp} className="h-1 w-32 bg-brand mb-12 shadow-[0_0_15px_rgba(0,240,255,0.4)]"></motion.div>
 
           <motion.p variants={fadeUp} className="text-2xl text-ink/80 font-light leading-relaxed mb-6 italic">
-            "A convergência impecável entre expertise visual profunda e Inteligência Artificial."
+            "A convergência impecável entre expertise visual profunda."
           </motion.p>
-          
+
           <motion.p variants={fadeUp} className="text-lg text-ink/60 leading-relaxed font-sans mb-16">
             Com mais de <strong>10 anos de excelência</strong> atuando implacavelmente nas trincheiras do mercado audiovisual e de software corporativo, a nossa equipe tática da <strong className="text-ink">Draft Creative Studio Ltda.</strong> é um celeiro de criadores e desenvolvedores de elite. Nós arquitetamos, do zero absoluto ao código final de produção, o posicionamento estético de empresas, marcas e parcerias, moldando produtos revolucionários para a vanguarda atual e futura do mercado tecnológico.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {[
-              { title: "Mestres do Audiovisual", icon: <Users className="w-8 h-8 text-brand"/>, desc: "Uma década forjando storytelling via perspectivas cinematográficas, cortes milimétricos e branding visual de tirar o fôlego." },
-              { title: "Engenharia de Código", icon: <MonitorSmartphone className="w-8 h-8 text-[#00FF41]"/>, desc: "Programação High-end criando Apps móveis nativos e plataformas webs focadas brutalmente na retenção do usuário." },
-              { title: "I.A. Estratégica", icon: <Rocket className="w-8 h-8 text-[#FFD700]"/>, desc: "Adoção inteligente de automações de Inteligência Artificial para escalar, turbinar e dominar o tráfego da sua campanha." }
+              { title: "Mestres do Audiovisual", icon: <Users className="w-8 h-8 text-brand" />, desc: "Uma década forjando storytelling via perspectivas cinematográficas, cortes milimétricos e branding visual de tirar o fôlego." },
+              { title: "Engenharia de Código", icon: <MonitorSmartphone className="w-8 h-8 text-[#00FF41]" />, desc: "Programação High-end criando Apps móveis nativos e plataformas webs focadas brutalmente na retenção do usuário." },
+              { title: "I.A. Estratégica", icon: <Rocket className="w-8 h-8 text-[#FFD700]" />, desc: "Adoção inteligente de automações de Inteligência Artificial para escalar, turbinar e dominar o tráfego da sua campanha." }
             ].map((card, i) => (
               <motion.div key={i} variants={fadeUp} className="px-8 py-10 border border-ink/10 bg-black/5 hover:bg-black/10 transition-colors backdrop-blur group hover:-translate-y-2 shadow-sm hover:shadow-xl duration-500">
                 <div className="mb-6 drop-shadow-2xl opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all origin-left">{card.icon}</div>
@@ -77,7 +77,7 @@ export default function SobrePage() {
                 Evoluir Minha Empresa
               </a>
             </div>
-            
+
             <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-brand/10 blur-[130px] rounded-full pointer-events-none z-0 mix-blend-screen -translate-x-1/2 -translate-y-1/2"></div>
           </motion.div>
 
