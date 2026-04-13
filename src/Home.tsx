@@ -115,7 +115,13 @@ const PROJECTS = [
   {
     title: "Zenith Game",
     category: "LAB",
-    image: "/studio/proj_app.webp"
+    image: "/studio/proj_app.jpg"
+  },
+  {
+    title: "Brasília Grill Fest",
+    category: "STUDIO",
+    image: "/studio/proj_grillfe.jpg",
+    description: "Um dos maiores festivais gastronômicos a céu aberto já realizados no Distrito Federal. O Brasília Grill Fest levou cultura, sabor e entretenimento para as cidades satélites de Brasília — quebrando fronteiras e democratizando o acesso à gastronomia de alto nível.\n\nCom palcos ao vivo, bandas e artistas locais, artesanato regional, cervejas artesanais geladas e uma multidão vibrante, o evento criou memórias afetivas e reforçou o orgulho de quem vive nas regiões administrativas do DF.\n\nEm breve: A próxima edição do Grill Fest promete ser ainda maior. Novos bairros, novos palcos, mesma energia — com a Draft Creative Studio por trás de toda a identidade visual, comunicação e produção audiovisual do evento."
   }
 ];
 
