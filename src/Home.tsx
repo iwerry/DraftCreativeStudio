@@ -96,7 +96,7 @@ const PROJECTS = [
     category: "STUDIO & LAB",
     image: "/studio/proj_entreelas.jpg",
     link: "https://www.projetoentreelas.com.br",
-    description: "Desenvolvimento Web, Audiovisual, Fotografia, Filmagem e Redes Sociais."
+    description: "O Projeto Entre Elas é uma iniciativa voltada para o acolhimento de mulheres em situação de vulnerabilidade e vítimas de violência doméstica, oferecendo suporte jurídico, psicológico e ações de resgate da autoestima. O programa busca fortalecer a rede de proteção feminina, promovendo a autonomia e a reinserção social através de cursos e assistência especializada.\n\nO que nós da Draft estamos fazendo para este projeto: Desenvolvimento Web, Audiovisual, Fotografia, Filmagem e Redes Sociais."
   },
   {
     title: "Nova Tech",
@@ -576,7 +576,7 @@ export default function Home() {
                     <div className="pr-4">
                       <h3 className="text-3xl font-display uppercase tracking-tight text-brand">{project.title}</h3>
                       {project.description && (
-                        <p className="text-sm text-ink/60 mt-2 font-sans line-clamp-2">{project.description}</p>
+                        <p className="text-sm text-ink/60 mt-2 font-sans whitespace-pre-line">{project.description}</p>
                       )}
                     </div>
                     <ArrowRight className="w-6 h-6 text-brand -rotate-45 group-hover:rotate-0 transition-transform duration-300 flex-shrink-0" />
