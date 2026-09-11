@@ -14,7 +14,7 @@
     "title1": "DRAFT",
     "title2": "CREATIVE",
     "title3": "STUDIO.",
-    "subtitle": "High-End Concept Design, 6K Audiovisual Cinema Production, Social Media Growth Strategies, and OSINT Investigative Intelligence. We bridge cinematic narrative and tech sovereignty to build undisputed market authority.",
+    "subtitle": "Design & Motion | Journalism | Film & Edit",
     "ctaServices": "Explore Services",
     "ctaWhatsApp": "Chat on WhatsApp",
     "stat1Label": "AUDIOVISUAL",
@@ -109,5 +109,13 @@
   "footer": {
     "rights": "All rights reserved.",
     "cnpj": "Daniel Rodrigues • Global Operations & Verified Corporate Identity"
+  },
+  "home": {
+    "servicesDesc": "Audiovisual consulting, 6K cinema production, concept design & branding, social media growth, and generative AI pipelines.",
+    "exploreAllServices": "Explore All Services",
+    "osintDesc": "Daniel Rodrigues combining documentary rigor, native Linux servers since 2002, OSINT intelligence, and digital forensics.",
+    "exploreInvestigative": "Access Investigative Section",
+    "projectsDesc": "Selected portfolio archive: Entre Elas, Instituto Mais Brasília, Nexus Intelligence, and Brasília Grill Fest.",
+    "viewProjectsArchive": "View Projects Archive"
   }
 }

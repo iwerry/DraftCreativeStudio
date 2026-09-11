@@ -14,7 +14,7 @@
     "title1": "DRAFT",
     "title2": "CREATIVE",
     "title3": "STUDIO.",
-    "subtitle": "Concepção de Arte de Alto Padrão, Produção Audiovisual 6K, Estratégia para Redes Sociais e Inteligência Investigativa OSINT. Conectamos narrativa cinematográfica e soberania de dados para transformar marcas em referências indiscutíveis.",
+    "subtitle": "Design & Motion | Journalism | Film & Edit",
     "ctaServices": "Explorar Serviços",
     "ctaWhatsApp": "Conversar no WhatsApp",
     "stat1Label": "AUDIOVISUAL",
@@ -109,5 +109,13 @@
   "footer": {
     "rights": "Todos os direitos reservados.",
     "cnpj": "Daniel Rodrigues • CNPJ & Atuação Global"
+  },
+  "home": {
+    "servicesDesc": "Consultoria em audiovisual, produção cinematográfica 6K, concept design & branding, redes sociais e consultoria em IA.",
+    "exploreAllServices": "Conhecer Todos os Serviços",
+    "osintDesc": "Daniel Rodrigues unindo apuração documental, servidores Linux desde 2002, OSINT e inteligência forense digital.",
+    "exploreInvestigative": "Acessar Seção Investigativa",
+    "projectsDesc": "Galeria selecionada de projetos reais: Entre Elas, Instituto Mais Brasília, Nexus Intelligence e Brasília Grill Fest.",
+    "viewProjectsArchive": "Ver Arquivo de Projetos"
   }
 }

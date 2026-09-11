@@ -163,9 +163,9 @@ export default function Home() {
             {/* Subheadline Translated */}
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-xl text-zinc-300 leading-relaxed font-sans max-w-3xl mx-auto font-light"
+              className="text-base sm:text-2xl text-cyan-300 font-mono tracking-wide max-w-3xl mx-auto font-medium"
             >
-              {t("hero.subtitle", "Concepção de Arte de Alto Padrão, Produção Audiovisual Cinematográfica, Estratégia para Redes Sociais e Inteligência Investigativa OSINT. Conectamos narrativa cinematográfica e soberania de dados para transformar marcas em referências indiscutíveis.")}
+              {t("hero.subtitle", "Design & Motion | Journalism | Film & Edit")}
             </motion.p>
 
             {/* Action CTAs */}
@@ -177,7 +177,7 @@ export default function Home() {
                 to="/servicos"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-400 text-white font-mono font-bold text-sm flex items-center justify-center gap-3 shadow-[0_0_35px_rgba(0,240,255,0.35)] transition-all cursor-pointer group"
               >
-                <span>{t("hero.ctaServices", "Explorar Serviços")}</span>
+                <span>{t("hero.ctaServices", "Explore Services")}</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
@@ -187,7 +187,7 @@ export default function Home() {
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-200 hover:text-white border border-white/15 hover:border-cyan-400/50 font-mono text-sm flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-sm"
               >
                 <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span>{t("nav.letsTalk", "Vamos Conversar")}</span>
+                <span>{t("nav.letsTalk", "Let's Talk")}</span>
               </button>
             </motion.div>
 
@@ -197,10 +197,10 @@ export default function Home() {
               className="pt-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-left"
             >
               {[
-                { label: t("hero.stat1Label", "AUDIOVISUAL"), value: t("hero.stat1Value", "Cinema & Lentes"), sub: t("hero.stat1Sub", "Captação de Alto Padrão") },
-                { label: t("hero.stat2Label", "CONCEPT DESIGN"), value: t("hero.stat2Value", "Branding & Presença"), sub: t("hero.stat2Sub", "Identidades Marcantes") },
-                { label: t("hero.stat3Label", "SOCIAL MEDIA"), value: t("hero.stat3Value", "Reels & Retenção"), sub: t("hero.stat3Sub", "Estratégia & Crescimento") },
-                { label: t("hero.stat4Label", "INVESTIGAÇÃO & TI"), value: t("hero.stat4Value", "OSINT & Linux"), sub: t("hero.stat4Sub", "Checagem Forense de Dados") }
+                { label: t("hero.stat1Label", "AUDIOVISUAL"), value: t("hero.stat1Value", "6K Cinema & Lenses"), sub: t("hero.stat1Sub", "High-End Camera Direction") },
+                { label: t("hero.stat2Label", "CONCEPT DESIGN"), value: t("hero.stat2Value", "Branding & Presence"), sub: t("hero.stat2Sub", "Iconic Visual Identities") },
+                { label: t("hero.stat3Label", "SOCIAL MEDIA"), value: t("hero.stat3Value", "Reels & Retention"), sub: t("hero.stat3Sub", "High Organic Growth") },
+                { label: t("hero.stat4Label", "INVESTIGATION & IT"), value: t("hero.stat4Value", "OSINT & Linux"), sub: t("hero.stat4Sub", "Digital Forensic Audit") }
               ].map((item, idx) => (
                 <div
                   key={idx}
@@ -229,15 +229,15 @@ export default function Home() {
             <span key={i} className="flex items-center gap-8">
               <span>DRAFT CREATIVE STUDIO</span>
               <span className="text-purple-400">•</span>
-              <span>PRODUÇÃO AUDIOVISUAL CINEMATOGRÁFICA</span>
+              <span>6K CINEMA AUDIOVISUAL PRODUCTION</span>
               <span className="text-cyan-400">•</span>
               <span>CONCEPT DESIGN & BRANDING</span>
               <span className="text-emerald-400">•</span>
-              <span>SOCIAL MEDIA & REELS</span>
+              <span>HIGH-RETENTION SOCIAL MEDIA</span>
               <span className="text-amber-400">•</span>
               <span>INVESTIGATIVE JOURNALISM</span>
               <span className="text-purple-400">•</span>
-              <span>MOTION DESIGN AVANÇADO</span>
+              <span>ADVANCED MOTION DESIGN</span>
               <span className="text-cyan-400">•</span>
             </span>
           ))}
@@ -262,10 +262,10 @@ export default function Home() {
                 <Clapperboard className="w-7 h-7" />
               </div>
               <h2 className="text-2xl font-bold font-display uppercase tracking-tight text-white group-hover:text-cyan-300 transition-colors">
-                {t("nav.services", "Serviços")}
+                {t("nav.services", "Services")}
               </h2>
               <p className="text-zinc-400 text-sm font-sans font-light leading-relaxed">
-                Consultoria em audiovisual, produção cinematográfica, concept design, social media e consultoria em inteligência artificial.
+                {t("home.servicesDesc", "Audiovisual consulting, 6K cinema production, concept design & branding, social media growth, and generative AI pipelines.")}
               </p>
             </div>
             <div className="pt-6 mt-6 border-t border-white/10">
@@ -273,7 +273,7 @@ export default function Home() {
                 to="/servicos"
                 className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 group-hover:text-white transition-colors"
               >
-                <span>Conhecer Todos os Serviços</span>
+                <span>{t("home.exploreAllServices", "Explore All Services")}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
               </Link>
             </div>
@@ -295,7 +295,7 @@ export default function Home() {
                 Investigative Journalism
               </h2>
               <p className="text-zinc-400 text-sm font-sans font-light leading-relaxed">
-                Daniel Rodrigues unindo apuração documental, servidores Linux desde 2002, OSINT e inteligência forense digital.
+                {t("home.osintDesc", "Daniel Rodrigues combining documentary rigor, native Linux servers since 2002, OSINT intelligence, and digital forensics.")}
               </p>
             </div>
             <div className="pt-6 mt-6 border-t border-white/10">
@@ -303,7 +303,7 @@ export default function Home() {
                 to="/investigative-journalism"
                 className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 group-hover:text-white transition-colors"
               >
-                <span>Acessar Seção Investigativa</span>
+                <span>{t("home.exploreInvestigative", "Access Investigative Section")}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
               </Link>
             </div>
@@ -322,10 +322,10 @@ export default function Home() {
                 <Film className="w-7 h-7" />
               </div>
               <h2 className="text-2xl font-bold font-display uppercase tracking-tight text-white group-hover:text-purple-300 transition-colors">
-                {t("nav.projects", "Projetos")}
+                {t("nav.projects", "Projects")}
               </h2>
               <p className="text-zinc-400 text-sm font-sans font-light leading-relaxed">
-                Galeria selecionada de projetos reais: Entre Elas, Instituto Mais Brasília, Nexus Intelligence e Brasília Grill Fest.
+                {t("home.projectsDesc", "Selected portfolio archive: Entre Elas, Instituto Mais Brasília, Nexus Intelligence, and Brasília Grill Fest.")}
               </p>
             </div>
             <div className="pt-6 mt-6 border-t border-white/10">
@@ -333,7 +333,7 @@ export default function Home() {
                 to="/projetos"
                 className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-purple-400 group-hover:text-white transition-colors"
               >
-                <span>Ver Arquivo de Projetos</span>
+                <span>{t("home.viewProjectsArchive", "View Projects Archive")}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
               </Link>
             </div>
