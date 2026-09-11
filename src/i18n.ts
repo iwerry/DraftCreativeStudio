@@ -6,25 +6,24 @@ import en from './locales/en.json';
 import es from './locales/es.json';
 import fr from './locales/fr.json';
 
-// Detect stored language or browser language, fallback to 'en'
+// Default 100% to English on initial load for global & high-tier presence
+// Only switches language if the user explicitly clicked a flag in the navbar
 const getInitialLanguage = (): string => {
   if (typeof window === 'undefined') return 'en';
 
-  const stored = localStorage.getItem('draft_lang');
-  if (stored && ['en', 'pt', 'es', 'fr'].includes(stored)) {
-    return stored;
+  const userChosen = localStorage.getItem('draft_user_lang');
+  if (userChosen && ['en', 'pt', 'es', 'fr'].includes(userChosen)) {
+    return userChosen;
   }
 
-  // Browser language detection
-  const browserLang = navigator.language.slice(0, 2).toLowerCase();
-  if (['pt', 'es', 'fr'].includes(browserLang)) {
-    return browserLang;
-  }
-
-  return 'en'; // Default English as requested
+  return 'en'; // Strict 100% English initial load
 };
 
 const initialLang = getInitialLanguage();
+
+if (typeof document !== 'undefined') {
+  document.documentElement.lang = initialLang;
+}
 
 i18n
   .use(initReactI18next)
@@ -41,5 +40,11 @@ i18n
       escapeValue: false
     }
   });
+
+i18n.on('languageChanged', (lng) => {
+  if (typeof document !== 'undefined') {
+    document.documentElement.lang = lng;
+  }
+});
 
 export default i18n;

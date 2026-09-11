@@ -6,10 +6,13 @@ import { Footer } from './components/layout/Footer';
 import { ContactModal } from './components/ui/ContactModal';
 import { OsintTerminal } from './components/ui/OsintTerminal';
 import { MatrixRain } from './components/ui/MatrixRain';
+import { useTranslation } from 'react-i18next';
 import PageTransition from './PageTransition';
 
 export default function InvestigativeJournalismPage() {
+  const { t, i18n } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const isPortuguese = i18n.language?.startsWith('pt');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -56,10 +59,16 @@ export default function InvestigativeJournalismPage() {
               <span>INVESTIGATIVE JOURNALISM // OSINT & LINUX INTELLIGENCE</span>
             </div>
             <h1 className="font-display text-4xl sm:text-6xl uppercase tracking-tighter text-white font-bold leading-tight">
-              A Fusão Entre <span className="text-emerald-400">Jornalismo Investigativo</span> & Tecnologia
+              {t("osint.title", "The Convergence of")}{" "}
+              <span className="text-emerald-400">
+                {t("osint.titleHighlight", "Investigative Journalism & Sovereign Tech")}
+              </span>
             </h1>
             <p className="text-zinc-300 text-base sm:text-xl font-sans font-light leading-relaxed">
-              Daniel Rodrigues reúne dois universos complementares: o rigor da apuração documental do jornalismo com a soberania técnica de sistemas Linux e inteligência de fontes abertas (OSINT).
+              {t(
+                "osint.subtitle",
+                "Daniel Rodrigues bridges two complementary worlds: the factual rigor of investigative journalism with deep technical mastery over Linux systems and open-source intelligence (OSINT)."
+              )}
             </p>
           </motion.div>
 
@@ -83,8 +92,8 @@ export default function InvestigativeJournalismPage() {
                     <h2 className="text-2xl font-bold font-display text-white">
                       Daniel Rodrigues
                     </h2>
-                    <p className="text-xs font-mono text-emerald-400 font-bold">
-                      Journalist Investigative | OSINT SPECIALIST
+                    <p className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">
+                      {isPortuguese ? "Jornalista Investigativo (DRT) | Especialista OSINT & Linux" : "Investigative Journalist (DRT) | OSINT & Linux Specialist"}
                     </p>
                   </div>
                 </div>
@@ -92,10 +101,14 @@ export default function InvestigativeJournalismPage() {
                 {/* Exact Requested Bio */}
                 <div className="p-5 rounded-2xl bg-black/50 border border-white/5 space-y-3 font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed">
                   <p className="text-emerald-300 font-bold">
-                    "Uso linux desde 2002 nativo na TI, vim para audiovisual/jornalismo a mais de 10 anos. O que me faz ter conhecimentos hoje diferenciados sobre o jornalismo e TI."
+                    {isPortuguese
+                      ? '"Uso linux desde 2002 nativo na TI, vim para audiovisual/jornalismo a mais de 10 anos. O que me faz ter conhecimentos hoje diferenciados sobre o jornalismo e TI."'
+                      : '"Native Linux user since 2002 in IT, transitioned to audiovisual and journalism over 10 years ago. Giving me unique, differentiated insights across investigative journalism and sovereign technology."'}
                   </p>
                   <p className="text-zinc-400 text-xs">
-                    Conhecimentos em diversos sistemas operacionais, servidores Linux, programação Python e outras linguagens.
+                    {isPortuguese
+                      ? "Conhecimentos em diversos sistemas operacionais, servidores Linux, programação Python e outras linguagens."
+                      : "Hands-on expertise across multiple operating systems, sovereign Linux servers, Python automation, and modern programming languages."}
                   </p>
                 </div>
 
@@ -104,23 +117,31 @@ export default function InvestigativeJournalismPage() {
                   {[
                     {
                       icon: <Server className="w-4 h-4 text-emerald-400" />,
-                      title: "Servidores Linux",
-                      desc: "Desde 2002 operando sistemas e infraestrutura nativa com alta soberania."
+                      title: isPortuguese ? "Servidores Linux" : "Linux Servers",
+                      desc: isPortuguese
+                        ? "Desde 2002 operando sistemas e infraestrutura nativa com alta soberania."
+                        : "Operating native infrastructure and Linux environments since 2002."
                     },
                     {
                       icon: <Binary className="w-4 h-4 text-cyan-400" />,
                       title: "OSINT Forensics",
-                      desc: "Extração de metadados, análise de imagens e mapeamento de dados abertos."
+                      desc: isPortuguese
+                        ? "Extração de metadados, análise de imagens e mapeamento de dados abertos."
+                        : "Metadata extraction, image forensic analysis, and open-source intelligence."
                     },
                     {
                       icon: <Code className="w-4 h-4 text-purple-400" />,
-                      title: "Python & Programação",
-                      desc: "Automações de coleta de dados, scrapers e pipelines investigativos."
+                      title: isPortuguese ? "Python & Programação" : "Python & Code",
+                      desc: isPortuguese
+                        ? "Automações de coleta de dados, scrapers e pipelines investigativos."
+                        : "Data collection automation, scrapers, and investigative pipelines."
                     },
                     {
                       icon: <Shield className="w-4 h-4 text-emerald-400" />,
-                      title: "Rigor Documental",
-                      desc: "Apuração ética de fatos, checagem cruzada e narrativa incontestável."
+                      title: isPortuguese ? "Rigor Documental" : "Documentary Rigor",
+                      desc: isPortuguese
+                        ? "Apuração ética de fatos, checagem cruzada e narrativa incontestável."
+                        : "Ethical fact-checking, cross-verification, and bulletproof narratives."
                     }
                   ].map((item, idx) => (
                     <div
@@ -156,7 +177,7 @@ export default function InvestigativeJournalismPage() {
                   onClick={() => setIsModalOpen(true)}
                   className="px-5 py-2.5 rounded-xl bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 hover:bg-emerald-400 hover:text-black text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.25)]"
                 >
-                  Falar com Daniel
+                  {isPortuguese ? "Falar com Daniel" : "Talk to Daniel"}
                 </button>
               </div>
             </motion.div>

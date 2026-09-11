@@ -1,4 +1,23 @@
 User-agent: *
 Allow: /
 
+# GEO (Generative Engine Optimization) - Explicit permissions for AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://draftcreative.com.br/sitemap.xml

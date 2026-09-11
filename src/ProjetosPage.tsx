@@ -20,7 +20,7 @@ const staggerContainer = {
 };
 
 export default function ProjetosPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -96,7 +96,9 @@ export default function ProjetosPage() {
                       {project.title}
                     </h2>
                     <p className="text-zinc-300 text-sm leading-relaxed font-sans font-light whitespace-pre-line">
-                      {project.description}
+                      {typeof project.description === 'string'
+                        ? project.description
+                        : (project.description as Record<string, string>)[i18n.language?.slice(0, 2)] || project.description.en || project.description.pt}
                     </p>
                   </div>
                 </div>
