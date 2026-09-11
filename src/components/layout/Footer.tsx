@@ -16,20 +16,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
-            <Link to="/" className="flex items-center gap-3">
+            <Link to="/" className="inline-block">
               <img
                 src="/draftlogo.svg"
                 alt="Draft Creative Studio"
-                className="h-9 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
               />
-              <div className="flex flex-col">
-                <span className="text-sm font-mono font-bold text-white uppercase">
-                  Draft Creative Studio Ltda.
-                </span>
-                <span className="text-[10px] font-mono text-cyan-400">
-                  Daniel Rodrigues • Global Operations
-                </span>
-              </div>
             </Link>
             <p className="text-zinc-400 text-xs sm:text-sm font-sans font-light max-w-sm leading-relaxed">
               Audiovisual production, strategic concept design, high-retention social media, and investigative OSINT intelligence.
