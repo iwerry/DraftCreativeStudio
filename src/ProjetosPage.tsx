@@ -8,10 +8,11 @@ import { ContactModal } from "./components/ui/ContactModal";
 import PageTransition from "./PageTransition";
 import { PROJECTS } from "./projectsData";
 
-const fadeUp = {
+const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
 };
+const fadeUp = fadeInUp;
 
 const staggerContainer = {
   hidden: { opacity: 0 },
