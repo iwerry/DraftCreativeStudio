@@ -1,1 +1,52 @@
-{}
+{
+  "nav": {
+    "services": "Serviços",
+    "osint": "Investigação & OSINT",
+    "projects": "Projetos",
+    "founder": "Sobre Daniel",
+    "contact": "Contato",
+    "letsTalk": "Vamos Conversar"
+  },
+  "hero": {
+    "badge": "Draft Creative Studio Ltda // Enterprise Media & Tech",
+    "title1": "Draft",
+    "title2": "Creative",
+    "title3": "Studio.",
+    "subtitle": "Concepção visual de alto padrão, produção audiovisual 6K, estratégias para redes sociais e inteligência investigativa OSINT. Conectamos narrativa cinematográfica e soberania tecnológica.",
+    "ctaServices": "Nossos Serviços",
+    "ctaWhatsApp": "Falar no WhatsApp",
+    "stat1Label": "Audiovisual",
+    "stat1Value": "Captação Cinema 6K",
+    "stat2Label": "Design",
+    "stat2Value": "Concept & Branding",
+    "stat3Label": "Social Media",
+    "stat3Value": "Estratégia & Retenção",
+    "stat4Label": "Investigação",
+    "stat4Value": "OSINT & Linux"
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Soluções completas em audiovisual, design conceitual, redes sociais e inteligência tecnológica para posicionar sua marca com autoridade máxima.",
+    "request": "Solicitar Orçamento"
+  },
+  "osint": {
+    "badge": "Jornalista (DRT) • Arquiteto TI • OSINT Specialist",
+    "title": "A Convergência entre Investigação e Tecnologia Soberana",
+    "desc": "Daniel Rodrigues une o rigor da apuração do jornalismo investigativo com a profundidade da engenharia de dados, sistemas Linux e inteligência de fontes abertas (OSINT). Seja na captação com câmeras de cinema ou na checagem forense de dados, entregamos precisão absoluta.",
+    "cert1": "F1NDX OSINT Specialist (Verificação Forense)",
+    "cert2": "Jornalismo Investigativo Profissional (DRT)",
+    "cert3": "Linux Kernel & Auditoria de Redes",
+    "cert4": "Direção Audiovisual & Fotojornalismo"
+  },
+  "contact": {
+    "title": "Vamos Criar Juntos?",
+    "subtitle": "Pronto para elevar o padrão audiovisual, visual e estratégico da sua empresa?",
+    "whatsappLabel": "WhatsApp Direto",
+    "socialLabel": "Instagram Oficial",
+    "formName": "Seu Nome",
+    "formEmail": "Seu E-mail",
+    "formService": "Serviço Desejado",
+    "formMessage": "Como podemos ajudar sua empresa?",
+    "formSubmit": "Enviar Mensagem"
+  }
+}

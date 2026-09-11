@@ -1,1 +1,52 @@
-{}
+{
+  "nav": {
+    "services": "Servicios",
+    "osint": "Investigación & OSINT",
+    "projects": "Proyectos",
+    "founder": "Sobre Daniel",
+    "contact": "Contacto",
+    "letsTalk": "Hablemos"
+  },
+  "hero": {
+    "badge": "Draft Creative Studio Ltda // Enterprise Media & Tech",
+    "title1": "Draft",
+    "title2": "Creative",
+    "title3": "Studio.",
+    "subtitle": "Diseño conceptual de alta gama, producción audiovisual de cine 6K, estrategias para redes sociales e inteligencia investigativa OSINT. Conectando narrativa cinematográfica y soberanía tecnológica.",
+    "ctaServices": "Nuestros Servicios",
+    "ctaWhatsApp": "Hablar en WhatsApp",
+    "stat1Label": "Audiovisual",
+    "stat1Value": "Cine 6K y Dirección",
+    "stat2Label": "Diseño",
+    "stat2Value": "Concept & Branding",
+    "stat3Label": "Redes Sociales",
+    "stat3Value": "Estrategia y Crecimiento",
+    "stat4Label": "Investigación",
+    "stat4Value": "OSINT & Linux"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones completas en producción audiovisual, diseño de conceptos, redes sociales e inteligencia tecnológica para posicionar su marca con máxima autoridad.",
+    "request": "Solicitar Cotización"
+  },
+  "osint": {
+    "badge": "Periodista de Investigación (DRT) • Arquitecto TI • Especialista OSINT",
+    "title": "La Convergencia entre Investigación y Tecnología Soberana",
+    "desc": "Daniel Rodrigues une el rigor del periodismo de investigación con la ingeniería de datos, sistemas Linux e inteligencia de fuentes abiertas (OSINT). Desde la dirección de cámaras de cine hasta el análisis forense de datos, entregamos precisión absoluta.",
+    "cert1": "F1NDX OSINT Specialist (Verificación Forense)",
+    "cert2": "Periodismo de Investigación Profesional (DRT)",
+    "cert3": "Kernel de Linux & Auditoría de Redes",
+    "cert4": "Dirección Audiovisual & Fotoperiodismo"
+  },
+  "contact": {
+    "title": "¿Creamos Juntos?",
+    "subtitle": "¿Listo para elevar el estándar audiovisual, visual y estratégico de su empresa?",
+    "whatsappLabel": "WhatsApp Directo",
+    "socialLabel": "Instagram Oficial",
+    "formName": "Su Nombre",
+    "formEmail": "Su Correo",
+    "formService": "Servicio Seleccionado",
+    "formMessage": "¿Cómo podemos ayudar a su empresa?",
+    "formSubmit": "Iniciar Transmisión"
+  }
+}

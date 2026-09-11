@@ -54,9 +54,9 @@ export default function SobrePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {[
-              { title: "Mestres do Audiovisual", icon: <Users className="w-8 h-8 text-brand" />, desc: "Uma década forjando storytelling via perspectivas cinematográficas, cortes milimétricos e branding visual de tirar o fôlego." },
-              { title: "Engenharia de Código", icon: <MonitorSmartphone className="w-8 h-8 text-[#00FF41]" />, desc: "Programação High-end criando Apps móveis nativos e plataformas webs focadas brutalmente na retenção do usuário." },
-              { title: "I.A. Estratégica", icon: <Rocket className="w-8 h-8 text-[#FFD700]" />, desc: "Adoção inteligente de automações de Inteligência Artificial para escalar, turbinar e dominar o tráfego da sua campanha." }
+              { title: "Cinema & Audiovisual 6K", icon: <Users className="w-8 h-8 text-cyan-400" />, desc: "Uma década forjando storytelling via perspectivas cinematográficas, cortes milimétricos e direção de arte de tirar o fôlego." },
+              { title: "Investigação OSINT & TI", icon: <MonitorSmartphone className="w-8 h-8 text-purple-400" />, desc: "Jornalismo investigativo unindo checagem forense de dados, sistemas Linux, auditoria de metadados e tecnologia sob medida." },
+              { title: "Social Media & Growth", icon: <Rocket className="w-8 h-8 text-pink-400" />, desc: "Estratégia visual de alta retenção para redes sociais, Reels magnéticos e autoridade corporativa inquestionável." }
             ].map((card, i) => (
               <motion.div key={i} variants={fadeUp} className="px-8 py-10 border border-ink/10 bg-black/5 hover:bg-black/10 transition-colors backdrop-blur group hover:-translate-y-2 shadow-sm hover:shadow-xl duration-500">
                 <div className="mb-6 drop-shadow-2xl opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all origin-left">{card.icon}</div>

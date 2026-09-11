@@ -1,1 +1,52 @@
-{}
+{
+  "nav": {
+    "services": "Services",
+    "osint": "Investigation & OSINT",
+    "projects": "Projets",
+    "founder": "À Propos de Daniel",
+    "contact": "Contact",
+    "letsTalk": "Discutons"
+  },
+  "hero": {
+    "badge": "Draft Creative Studio Ltda // Enterprise Media & Tech",
+    "title1": "Draft",
+    "title2": "Creative",
+    "title3": "Studio.",
+    "subtitle": "Design conceptuel haut de gamme, production audiovisuelle cinéma 6K, stratégies pour réseaux sociaux et renseignement d'investigation OSINT.",
+    "ctaServices": "Nos Services",
+    "ctaWhatsApp": "Parler sur WhatsApp",
+    "stat1Label": "Audiovisuel",
+    "stat1Value": "Tournage Cinéma 6K",
+    "stat2Label": "Design",
+    "stat2Value": "Concept & Branding",
+    "stat3Label": "Réseaux Sociaux",
+    "stat3Value": "Stratégie & Rétention",
+    "stat4Label": "Investigation",
+    "stat4Value": "OSINT & Linux"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions complètes en audiovisuel, design, réseaux sociaux et technologie d'investigation.",
+    "request": "Demander un Devis"
+  },
+  "osint": {
+    "badge": "Journaliste d'Investigation (DRT) • Architecte IT • Spécialiste OSINT",
+    "title": "La Convergence entre Investigation et Technologie Souveraine",
+    "desc": "Daniel Rodrigues allie la rigueur du journalisme d'investigation à l'ingénierie logicielle et aux systèmes Linux.",
+    "cert1": "F1NDX OSINT Specialist",
+    "cert2": "Journalisme d'Investigation Professionnel",
+    "cert3": "Linux Kernel & Réseaux",
+    "cert4": "Direction Audiovisuelle"
+  },
+  "contact": {
+    "title": "Créons Ensemble",
+    "subtitle": "Prêt à transformer l'image et l'impact de votre entreprise ?",
+    "whatsappLabel": "WhatsApp Direct",
+    "socialLabel": "Instagram Officiel",
+    "formName": "Votre Nom",
+    "formEmail": "Votre Email",
+    "formService": "Service Souhaité",
+    "formMessage": "Comment pouvons-nous vous aider ?",
+    "formSubmit": "Envoyer"
+  }
+}

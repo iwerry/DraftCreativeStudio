@@ -5,8 +5,6 @@ import ServicePage from "./ServicePage";
 import SobrePage from "./SobrePage";
 import ProjetosPage from "./ProjetosPage";
 import FloatingWidgets from "./FloatingWidgets";
-import { DraftStudio } from "../DraftStudio";
-
 export default function App() {
   const location = useLocation();
 
@@ -14,7 +12,7 @@ export default function App() {
     <>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<DraftStudio isOpen={true} onClose={() => {}} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<SobrePage />} />
           <Route path="/projetos" element={<ProjetosPage />} />
           <Route path="/:serviceId" element={<ServicePage />} />

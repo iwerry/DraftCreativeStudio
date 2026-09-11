@@ -6,41 +6,65 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import PageTransition from "./PageTransition";
 
 const SERVICES_DATA: Record<string, any> = {
-  studio: {
-    title: "STUDIO",
-    subtitle: "Produção Audiovisual e Storytelling",
-    description: "Transformamos ideias em obras primas audiovisuais com qualidade de cinema. Fotografia impecável, filmagem premium, motion design e direção de arte projetadas para posicionar a sua marca no topo da pirâmide visual do mercado.",
+  audiovisual: {
+    title: "AUDIOVISUAL 6K",
+    subtitle: "Produção Cinematográfica & Storytelling",
+    description: "Captação de alto impacto com lentes e câmeras de cinema para comerciais, vídeos institucionais, webseries e documentários. Direção de arte impecável e áudio cristalino para elevar o patamar da sua marca.",
     icon: <Video className="w-12 h-12" />,
-    color: "bg-[#8E9AAF]",
-    brandColor: "#8E9AAF",
-    textColor: "text-[#0A0F1E]",
-    glowLight: "rgba(142, 154, 175, 0.4)",
+    color: "bg-cyan-500",
+    brandColor: "#00F0FF",
+    textColor: "text-black",
+    glowLight: "rgba(0, 240, 255, 0.4)",
     coverUrl: "/studio/cover_studio.webp",
-    fields: ["Fotografia Premium", "Trabalho Audiovisual / Vídeo", "Motion Design 2D/3D", "Identidade Visual Corporativa", "Cobertura de Evento"]
+    fields: ["Vídeo Institucional", "Comerciais de Alto Padrão", "Documentários & Webseries", "Color Grading & Motion", "Captação Cinema 6K"]
   },
-  lab: {
-    title: "LAB",
-    subtitle: "Desenvolvimento de Apps, Games e Plataformas",
-    description: "Nós criamos o terreno digital do futuro. Aplicativos hiper-responsivos para Android e iOS, softwares em nuvem e experiências completas de UI/UX construídas com alta performance e código épico.",
+  studio: {
+    title: "DRAFT CREATIVE STUDIO",
+    subtitle: "Produção Audiovisual & Concept Design",
+    description: "Transformamos ideias em obras primas audiovisuais com qualidade de cinema. Fotografia corporativa impecável, filmagem premium, motion design e direção de arte projetadas para posicionar a sua marca no topo da pirâmide visual do mercado.",
+    icon: <Video className="w-12 h-12" />,
+    color: "bg-cyan-500",
+    brandColor: "#00F0FF",
+    textColor: "text-black",
+    glowLight: "rgba(0, 240, 255, 0.4)",
+    coverUrl: "/studio/cover_studio.webp",
+    fields: ["Fotografia Corporativa", "Captação Cinema 6K", "Motion Design Avançado", "Identidade Visual & Branding", "Cobertura de Eventos Executivos"]
+  },
+  "concept-design": {
+    title: "CONCEPT DESIGN & BRANDING",
+    subtitle: "Identidades Visuais & Direção de Arte",
+    description: "Construção de marcas lendárias, logotipos de impacto global, tipografias autorais e direção de arte corporativa para diferenciar sua empresa de qualquer concorrente.",
     icon: <Code2 className="w-12 h-12" />,
-    color: "bg-[#00FF41]",
-    brandColor: "#00FF41",
-    textColor: "text-[#0A0F1E]",
-    glowLight: "rgba(0, 255, 65, 0.3)",
+    color: "bg-purple-500",
+    brandColor: "#7928CA",
+    textColor: "text-white",
+    glowLight: "rgba(121, 40, 202, 0.4)",
     coverUrl: "/studio/cover_lab.webp",
-    fields: ["App Android e iOS", "Plataforma Web Especialista", "Desenvolvimento de Jogos", "Design UI/UX", "Automatização / IA"]
+    fields: ["Criação de Logotipo", "Manual de Identidade Visual", "Design de Peças Offline e Online", "Direção de Arte Completa", "Design System"]
   },
-  academy: {
-    title: "ACADEMY",
-    subtitle: "Treinamentos, Cursos e Imersões",
-    description: "A sabedoria técnica que molda o mercado. Conquiste novos horizontes através de nossas mentorias presenciais e imersões online em edição, captação, direção e fundamentos de frontend e IA.",
+  "social-media": {
+    title: "SOCIAL MEDIA & REELS",
+    subtitle: "Estratégia de Alta Retenção & Autoridade",
+    description: "Gestão visual e produção contínua de conteúdo em vídeo vertical para Instagram, TikTok e YouTube. Roteiros magnéticos e edição dinâmica para gerar conexão e conversão real.",
+    icon: <Video className="w-12 h-12" />,
+    color: "bg-pink-500",
+    brandColor: "#EC4899",
+    textColor: "text-white",
+    glowLight: "rgba(236, 72, 153, 0.4)",
+    coverUrl: "/studio/cover_studio.webp",
+    fields: ["Produção de Reels & TikToks", "Carrosséis Estratégicos", "Cronograma de Postagens", "Roteiros de Engajamento", "Consultoria de Perfil"]
+  },
+  osint: {
+    title: "INVESTIGAÇÃO OSINT & TI",
+    subtitle: "Jornalismo Investigativo & Inteligência de Dados",
+    description: "Apuração factual profunda por Daniel Rodrigues (Jornalista DRT). Extração de metadados, análise forense digital, sistemas Linux soberanos e inteligência de fontes abertas.",
     icon: <GraduationCap className="w-12 h-12" />,
-    color: "bg-[#FFD700]",
-    brandColor: "#FFD700",
-    textColor: "text-[#0A0F1E]",
-    glowLight: "rgba(255, 215, 0, 0.3)",
+    color: "bg-emerald-500",
+    brandColor: "#10B981",
+    textColor: "text-black",
+    glowLight: "rgba(16, 185, 129, 0.4)",
     coverUrl: "/studio/cover_academy.webp",
-    fields: ["Curso de Captação & Fotografia", "Formação de Edição Profissional", "Masterclass Desvendando IA", "Mentorias Individuais", "Base de Front-End e UX"]
+    fields: ["Investigação OSINT", "Verificação Forense de Arquivos", "Consultoria de Segurança e Linux", "Apuração Documental", "Checagem de Fatos"]
   }
 };
 
