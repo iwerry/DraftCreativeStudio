@@ -32,21 +32,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="group cursor-pointer flex items-center gap-3">
+        <Link to="/" className="group cursor-pointer flex items-center">
           <div className="p-1 rounded-xl group-hover:drop-shadow-[0_0_15px_rgba(0,240,255,0.8)] transition-all">
             <img
               src="/draftlogo.svg"
               alt="Draft Creative Studio Logo"
               className="h-8 md:h-11 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-          </div>
-          <div className="hidden lg:flex flex-col">
-            <span className="text-[10px] font-mono tracking-widest text-cyan-400 font-bold uppercase">
-              Creative Studio Ltda.
-            </span>
-            <span className="text-[11px] font-mono text-zinc-400">
-              {t("nav.slogan", "Audiovisual & Intelligence")}
-            </span>
           </div>
         </Link>
 
