@@ -3,7 +3,11 @@ import { motion } from 'motion/react';
 import { Sparkles, Eye, Layers, Smartphone, Camera, Play, ArrowRight, ShieldCheck, Flame } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-export const Magic3DShowcase: React.FC = () => {
+interface Magic3DShowcaseProps {
+  onSelectService?: (serviceName: string) => void;
+}
+
+export const Magic3DShowcase: React.FC<Magic3DShowcaseProps> = ({ onSelectService }) => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'camera' | 'product' | 'mobile'>('camera');
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -101,13 +105,14 @@ export const Magic3DShowcase: React.FC = () => {
               </div>
 
               <div className="pt-4">
-                <a
-                  href="#contato"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-950 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-400 hover:text-black font-mono text-xs font-bold uppercase tracking-wider transition-all"
+                <button
+                  type="button"
+                  onClick={() => onSelectService ? onSelectService("Produção Audiovisual & Captação 6K") : (window.location.hash = "#contato")}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-950 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-400 hover:text-black font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
                 >
                   <span>{t("magic3d.cameraCta", "Solicitar Projeto 3D")}</span>
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </div>
 
@@ -171,13 +176,14 @@ export const Magic3DShowcase: React.FC = () => {
               </div>
 
               <div className="pt-4">
-                <a
-                  href="#contato"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-rose-950 border border-rose-500/50 text-rose-300 hover:bg-rose-500 hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-all"
+                <button
+                  type="button"
+                  onClick={() => onSelectService ? onSelectService("Edição de Vídeo Sênior & Motion Design") : (window.location.hash = "#contato")}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-rose-950 border border-rose-500/50 text-rose-300 hover:bg-rose-500 hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
                 >
                   <span>{t("magic3d.productCta", "Criar Comercial de Produto")}</span>
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </div>
 
@@ -240,13 +246,14 @@ export const Magic3DShowcase: React.FC = () => {
               </div>
 
               <div className="pt-4">
-                <a
-                  href="#contato"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-950 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-400 hover:text-black font-mono text-xs font-bold uppercase tracking-wider transition-all"
+                <button
+                  type="button"
+                  onClick={() => onSelectService ? onSelectService("Criação de Conteúdo & Social Media") : (window.location.hash = "#contato")}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-950 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-400 hover:text-black font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
                 >
                   <span>{t("magic3d.mobileCta", "Criar Conteúdo 3D para Redes")}</span>
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </div>
 

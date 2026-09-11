@@ -594,12 +594,45 @@ export default function Home() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Express Quote & Conversion Banner */}
+        <div className="mt-16 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-purple-950/40 via-zinc-900 to-cyan-950/40 border border-cyan-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+          <div className="space-y-1">
+            <span className="text-xs font-mono uppercase text-cyan-400 font-bold tracking-wider flex items-center gap-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              Briefing Direto // draftcs21@gmail.com
+            </span>
+            <h3 className="text-xl sm:text-2xl font-bold font-display uppercase text-white">
+              Precisa de um projeto personalizado para sua empresa?
+            </h3>
+            <p className="text-zinc-400 text-sm font-sans font-light">
+              Receba uma proposta detalhada de audiovisual 6K, redes sociais, concept design ou OSINT em até 24 horas.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+            <button
+              type="button"
+              onClick={() => handleSelectServiceAndScroll("Projeto 360 Completo")}
+              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)] cursor-pointer"
+            >
+              Pedir Orçamento por E-mail
+            </button>
+            <a
+              href={getWhatsAppLink()}
+              target="_blank"
+              rel="noreferrer"
+              className="px-6 py-3.5 rounded-xl bg-zinc-950 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-black font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+            >
+              Falar no WhatsApp
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* ========================================================================= */}
       {/* 3. SHOWCASE MÁGICO 3D & CINEMA EM MOVIMENTO                               */}
       {/* ========================================================================= */}
-      <Magic3DShowcase />
+      <Magic3DShowcase onSelectService={handleSelectServiceAndScroll} />
 
       {/* ========================================================================= */}
       {/* 4. DANIEL RODRIGUES: JORNALISMO INVESTIGATIVO, OSINT & LINUX              */}
@@ -887,18 +920,24 @@ export default function Home() {
               <input
                 type="hidden"
                 name="_subject"
-                value={`Novo Contato Draft: [${selectedService}]`}
+                value={`Novo Lead Draft: [${selectedService}]`}
               />
               <input
                 type="hidden"
                 name="Servico_Origem_Clicado"
                 value={selectedService}
               />
+              <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
+                name="_autoresponse"
+                value="Recebemos sua mensagem na Draft Creative Studio! Daniel Rodrigues analisará sua demanda e entrará em contato com você em breve."
+              />
+              <input
+                type="hidden"
                 name="_next"
-                value="https://draftcreative.com.br"
+                value="https://draftcreative.com.br#contato"
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -927,6 +966,19 @@ export default function Home() {
                     className="w-full p-4 rounded-xl bg-zinc-950/80 border border-white/10 text-white placeholder:text-zinc-600 focus:border-cyan-400 outline-none transition-colors font-mono text-sm"
                   />
                 </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-300">
+                  WhatsApp / Telefone (com DDD) *
+                </label>
+                <input
+                  type="tel"
+                  name="Telefone_WhatsApp"
+                  required
+                  placeholder="(61) 98905-5720"
+                  className="w-full p-4 rounded-xl bg-zinc-950/80 border border-white/10 text-white placeholder:text-zinc-600 focus:border-cyan-400 outline-none transition-colors font-mono text-sm"
+                />
               </div>
 
               <div className="space-y-2">
@@ -968,7 +1020,7 @@ export default function Home() {
                 className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-mono font-bold uppercase tracking-widest text-sm transition-all duration-300 shadow-[0_0_25px_rgba(0,240,255,0.3)] cursor-pointer flex items-center justify-center gap-2"
               >
                 <Send className="w-4 h-4" />
-                <span>{t("contact.formSubmit", "Enviar Solicitação")}</span>
+                <span>{t("contact.formSubmit", "Enviar Solicitação")} (draftcs21@gmail.com)</span>
               </button>
             </form>
           </div>
