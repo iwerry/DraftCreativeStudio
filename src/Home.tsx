@@ -37,6 +37,8 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import PageTransition from "./PageTransition";
 import { Hero3D } from "./components/ui/Hero3D";
 import { OsintTerminal } from "./components/ui/OsintTerminal";
+import { FloatingAmbient3D } from "./components/ui/FloatingAmbient3D";
+import { Magic3DShowcase } from "./components/ui/Magic3DShowcase";
 import { PROJECTS } from "./projectsData";
 
 // Serviços Oficiais verificados (Google Meu Negócio + Especialidades da Draft Creative Studio)
@@ -48,7 +50,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-cyan-400/40 text-cyan-300 bg-cyan-950/40",
     icon: <Clapperboard className="w-7 h-7 text-cyan-400" />,
     shortDesc: "Planejamento estratégico de mídia, curadoria de estética corporativa e direção de cena para marcas de alta relevância.",
-    fullDesc: "Diagnóstico completo de comunicação visual, orientação sobre equipamentos, iluminação, roteiro e posicionamento de autoridade no mercado.",
     tags: ["Direção Criativa", "Curadoria Visual", "Estratégia 360°"]
   },
   {
@@ -58,7 +59,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-purple-400/40 text-purple-300 bg-purple-950/40",
     icon: <Film className="w-7 h-7 text-purple-400" />,
     shortDesc: "Captação cinematográfica em altíssima resolução para comerciais, vídeos institucionais, webseries e documentários.",
-    fullDesc: "Câmeras e lentes de cinema, iluminação dramática, captação de som direto cristalino e direção de atores e porta-vozes corporativos.",
     tags: ["Comerciais", "Vídeo Institucional", "Documentários"]
   },
   {
@@ -68,7 +68,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-emerald-400/40 text-emerald-300 bg-emerald-950/40",
     icon: <Video className="w-7 h-7 text-emerald-400" />,
     shortDesc: "Ritmo cirúrgico de corte, color grading cinematográfico, sound design imersivo e animações gráficas de padrão internacional.",
-    fullDesc: "Edição avançada projetada para reter a atenção do espectador do primeiro ao último segundo, reforçando a mensagem da sua marca.",
     tags: ["Color Grading", "Sound Design", "VFX & Motion"]
   },
   {
@@ -78,7 +77,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-cyan-400/40 text-cyan-300 bg-cyan-950/40",
     icon: <Layers className="w-7 h-7 text-cyan-400" />,
     shortDesc: "Construção de identidades visuais memoráveis, logotipos de alto impacto, tipografia autoral e diretrizes de marca completas.",
-    fullDesc: "Da concepção filosófica ao manual técnico de aplicação corporativa: criamos sistemas visuais que se destacam e perpetuam marcas.",
     tags: ["Identidade Visual", "Logotipos", "Design System"]
   },
   {
@@ -88,7 +86,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-pink-400/40 text-pink-300 bg-pink-950/40",
     icon: <Sparkles className="w-7 h-7 text-pink-400" />,
     shortDesc: "Estratégia visual para redes sociais: Reels magnéticos, TikToks dinâmicos, carrosséis de autoridade e cronograma de publicação.",
-    fullDesc: "Conteúdo desenhado para gerar engajamento qualificado e transformar seguidores em clientes e admiradores da sua marca.",
     tags: ["Reels & TikTok", "Carrosséis", "Growth Orgânico"]
   },
   {
@@ -98,7 +95,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-amber-400/40 text-amber-300 bg-amber-950/40",
     icon: <Camera className="w-7 h-7 text-amber-400" />,
     shortDesc: "Cobertura de eventos de alta cúpula, congressos executivos e retratos corporativos para diretores e líderes de mercado.",
-    fullDesc: "Direção fotográfica com iluminação precisa de estúdio ou locação, transmitindo credibilidade, liderança e sofisticação imediata.",
     tags: ["Retratos Executivos", "Eventos Corporativos", "Diretoria"]
   },
   {
@@ -108,7 +104,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-blue-400/40 text-blue-300 bg-blue-950/40",
     icon: <Eye className="w-7 h-7 text-blue-400" />,
     shortDesc: "Registro factual em campo com olhar jornalístico apurado, memória histórica institucional e ensaios documentais de verdade.",
-    fullDesc: "Documentação ética, precisa e sensível de projetos sociais, ações governamentais, causas humanitárias e transformações urbanas.",
     tags: ["Fotojornalismo", "Arquivo Institucional", "Rigor Factual"]
   },
   {
@@ -118,7 +113,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-violet-400/40 text-violet-300 bg-violet-950/40",
     icon: <MessageSquare className="w-7 h-7 text-violet-400" />,
     shortDesc: "Roteiros cirúrgicos e magnéticos estruturados cena a cena para prender a atenção e gerar conexões emocionais duradouras.",
-    fullDesc: "Formato Master Scenes utilizado no cinema tradicional, adaptado para documentários, publicidade e vídeos de vendas na internet.",
     tags: ["Master Scenes", "Storytelling", "Copy Cinematográfica"]
   },
   {
@@ -128,7 +122,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-teal-400/40 text-teal-300 bg-teal-950/40",
     icon: <Cpu className="w-7 h-7 text-teal-400" />,
     shortDesc: "Animações leves e vídeos otimizados para landing pages, websites interativos, banners de alto impacto e criativos verticais.",
-    fullDesc: "Compressão inteligente sem perda de qualidade visual, fluidez em 60fps e integração com a identidade digital da empresa.",
     tags: ["Web Video", "Landing Pages", "Criativos de Anúncio"]
   },
   {
@@ -138,7 +131,6 @@ const DRAFT_SERVICES = [
     badgeColor: "border-indigo-400/40 text-indigo-300 bg-indigo-950/40",
     icon: <Binary className="w-7 h-7 text-indigo-400" />,
     shortDesc: "Implementação de ferramentas de IA generativa em pipelines criativos para acelerar o concept design e automatizar processos visuais.",
-    fullDesc: "Treinamento de modelos, geração de storyboards assistidos por IA, upscaling inteligente de imagens e tratamento de áudio avançado.",
     tags: ["IA Generativa", "Workflows Ágeis", "Upscaling & Áudio"]
   }
 ];
@@ -157,6 +149,7 @@ export default function Home() {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [selectedService, setSelectedService] = useState("Consultoria em Audiovisual");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -166,14 +159,23 @@ export default function Home() {
 
   const getWhatsAppLink = (serviceName?: string) => {
     const base = "https://wa.me/556198905720?text=";
-    if (serviceName) {
-      return `${base}${encodeURIComponent(`Olá Daniel, vi o site da Draft Creative Studio e gostaria de solicitar um orçamento para o serviço de: ${serviceName}`)}`;
+    const targetService = serviceName || selectedService;
+    return `${base}${encodeURIComponent(`Olá Daniel, vi o site da Draft Creative Studio e gostaria de solicitar um orçamento para o serviço de: ${targetService}`)}`;
+  };
+
+  const handleSelectServiceAndScroll = (serviceTitle: string) => {
+    setSelectedService(serviceTitle);
+    const element = document.getElementById("contato");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    return `${base}${encodeURIComponent("Olá Daniel! Conheci a Draft Creative Studio e gostaria de conversar sobre um projeto.")}`;
   };
 
   return (
     <PageTransition>
+      {/* Parallax Floating Ambient 3D Petals & Light Orbs */}
+      <FloatingAmbient3D />
+
       {/* Schema.org Microdata for Search Engines and AI Crawlers */}
       <script type="application/ld+json">
         {JSON.stringify({
@@ -253,18 +255,25 @@ export default function Home() {
                 Creative Studio Ltda.
               </span>
               <span className="text-[11px] font-mono text-zinc-400">
-                Audiovisual & Intelligence
+                {t("nav.slogan", "Audiovisual & Intelligence")}
               </span>
             </div>
           </a>
 
-          {/* Desktop Links (Single Brand - No Lab/Academy Dropdowns!) */}
+          {/* Desktop Links (Translated & Single Brand) */}
           <div className="hidden md:flex items-center gap-8 text-xs font-mono tracking-widest uppercase text-zinc-300">
             <a
               href="#servicos"
               className="hover:text-cyan-400 transition-colors py-2"
             >
               {t("nav.services", "Serviços")}
+            </a>
+            <a
+              href="#motion3d"
+              className="hover:text-cyan-400 transition-colors py-2 flex items-center gap-1.5"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              {t("nav.magic3d", "3D & Cinema")}
             </a>
             <a
               href="#osint"
@@ -330,11 +339,12 @@ export default function Home() {
             className="fixed inset-0 z-40 bg-[#07090e]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 md:hidden px-6"
           >
             {[
-              { label: "Nossos Serviços", href: "#servicos" },
-              { label: "Investigação & OSINT", href: "#osint" },
-              { label: "Projetos", href: "#projetos" },
-              { label: "Sobre Daniel Rodrigues", href: "#sobre-daniel" },
-              { label: "Contato & Orçamento", href: "#contato" }
+              { label: t("nav.services", "Nossos Serviços"), href: "#servicos" },
+              { label: t("nav.magic3d", "3D & Cinema em Movimento"), href: "#motion3d" },
+              { label: t("nav.osint", "Investigação & OSINT"), href: "#osint" },
+              { label: t("nav.projects", "Projetos"), href: "#projetos" },
+              { label: t("nav.founder", "Sobre Daniel Rodrigues"), href: "#sobre-daniel" },
+              { label: t("nav.contact", "Contato & Orçamento"), href: "#contato" }
             ].map((item) => (
               <a
                 key={item.href}
@@ -353,7 +363,7 @@ export default function Home() {
               className="mt-6 w-full py-4 text-center rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold uppercase tracking-widest text-sm shadow-[0_0_25px_rgba(0,240,255,0.4)]"
               onClick={() => setIsMenuOpen(false)}
             >
-              Falar no WhatsApp
+              {t("hero.ctaWhatsApp", "Falar no WhatsApp")}
             </a>
           </motion.div>
         )}
@@ -380,30 +390,29 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="flex justify-center">
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 shadow-[0_0_25px_rgba(0,240,255,0.2)] backdrop-blur-md">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-                <span className="text-zinc-400 uppercase tracking-widest">Enterprise Media Tech //</span>
-                <span className="font-bold text-white tracking-wider">Draft Creative Studio Ltda</span>
+                <span className="text-zinc-400 uppercase tracking-widest">{t("hero.badge", "Enterprise Media Tech // Draft Creative Studio Ltda")}</span>
               </div>
             </motion.div>
 
             {/* Giant Futuristic Headline */}
             <motion.div variants={fadeInUp} className="space-y-2">
               <h1 className="font-display text-[13vw] sm:text-[11vw] lg:text-[7.5rem] leading-[0.88] tracking-tighter uppercase font-bold text-white select-none">
-                <span className="block">DRAFT</span>
+                <span className="block">{t("hero.title1", "DRAFT")}</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">
-                  CREATIVE
+                  {t("hero.title2", "CREATIVE")}
                 </span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-300 to-cyan-400">
-                  STUDIO<span className="text-cyan-400 drop-shadow-[0_0_20px_rgba(0,240,255,0.8)]">.</span>
+                  {t("hero.title3", "STUDIO.")}
                 </span>
               </h1>
             </motion.div>
 
-            {/* Subheadline (Concept Design, Video, Social Media, Marketing, OSINT) */}
+            {/* Subheadline Translated */}
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-xl text-zinc-300 leading-relaxed font-sans max-w-3xl mx-auto font-light"
             >
-              Concepção de Arte de Alto Padrão, Produção Audiovisual 6K, Estratégia para Redes Sociais e Inteligência Investigativa OSINT. Conectamos narrativa cinematográfica e soberania de dados para transformar marcas em referências indiscutíveis.
+              {t("hero.subtitle", "Concepção de Arte de Alto Padrão, Produção Audiovisual 6K, Estratégia para Redes Sociais e Inteligência Investigativa OSINT. Conectamos narrativa cinematográfica e soberania de dados para transformar marcas em referências indiscutíveis.")}
             </motion.p>
 
             {/* Action CTAs */}
@@ -415,7 +424,7 @@ export default function Home() {
                 href="#servicos"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-400 text-white font-mono font-bold text-sm flex items-center justify-center gap-3 shadow-[0_0_35px_rgba(0,240,255,0.35)] transition-all cursor-pointer group"
               >
-                <span>Explorar Serviços</span>
+                <span>{t("hero.ctaServices", "Explorar Serviços")}</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -426,7 +435,7 @@ export default function Home() {
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-200 hover:text-white border border-white/15 hover:border-cyan-400/50 font-mono text-sm flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-sm"
               >
                 <MessageSquare className="w-4 h-4 text-cyan-400" />
-                <span>Conversar no WhatsApp</span>
+                <span>{t("hero.ctaWhatsApp", "Conversar no WhatsApp")}</span>
               </a>
             </motion.div>
 
@@ -436,10 +445,10 @@ export default function Home() {
               className="pt-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-left"
             >
               {[
-                { label: "AUDIOVISUAL", value: "Cinema 6K & Lentes", sub: "Captação de Alto Padrão" },
-                { label: "CONCEPT DESIGN", value: "Branding & Presença", sub: "Identidades Marcantes" },
-                { label: "SOCIAL MEDIA", value: "Reels & Retenção", sub: "Estratégia & Crescimento" },
-                { label: "INVESTIGAÇÃO & TI", value: "OSINT & Linux", sub: "Checagem Forense de Dados" }
+                { label: t("hero.stat1Label", "AUDIOVISUAL"), value: t("hero.stat1Value", "Cinema 6K & Lentes"), sub: t("hero.stat1Sub", "Captação de Alto Padrão") },
+                { label: t("hero.stat2Label", "CONCEPT DESIGN"), value: t("hero.stat2Value", "Branding & Presença"), sub: t("hero.stat2Sub", "Identidades Marcantes") },
+                { label: t("hero.stat3Label", "SOCIAL MEDIA"), value: t("hero.stat3Value", "Reels & Retenção"), sub: t("hero.stat3Sub", "Estratégia & Crescimento") },
+                { label: t("hero.stat4Label", "INVESTIGAÇÃO & TI"), value: t("hero.stat4Value", "OSINT & Linux"), sub: t("hero.stat4Sub", "Checagem Forense de Dados") }
               ].map((item, idx) => (
                 <div
                   key={idx}
@@ -496,13 +505,13 @@ export default function Home() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-950/50 border border-cyan-500/30 text-xs font-mono text-cyan-300">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>SOLUÇÕES COMPLETAS // DRAFT SERVICES</span>
+            <span>{t("services.badge", "SOLUÇÕES COMPLETAS // DRAFT SERVICES")}</span>
           </div>
           <h2 className="font-display text-4xl sm:text-6xl uppercase tracking-tighter text-white">
-            Nossos <span className="text-cyan-400">Serviços</span>
+            {t("services.title", "Nossos")} <span className="text-cyan-400">{t("services.titleHighlight", "Serviços")}</span>
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg font-sans leading-relaxed font-light">
-            Não são apenas habilidades soltas: são serviços estruturados e executados com maestria para solucionar as necessidades de imagem, autoridade e vendas da sua empresa.
+            {t("services.subtitle", "Não são apenas habilidades soltas: são serviços estruturados e executados com maestria para solucionar as necessidades de imagem, autoridade e vendas da sua empresa.")}
           </p>
         </motion.div>
 
@@ -519,7 +528,9 @@ export default function Home() {
               key={service.id}
               variants={fadeInUp}
               whileHover={{ y: -6 }}
-              className="p-8 rounded-2xl bg-zinc-900/60 hover:bg-zinc-900/90 border border-white/10 hover:border-cyan-400/50 backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] relative overflow-hidden"
+              className={`p-8 rounded-2xl bg-zinc-900/60 hover:bg-zinc-900/90 border transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] relative overflow-hidden backdrop-blur-xl ${
+                selectedService === service.title ? 'border-cyan-400 ring-1 ring-cyan-400/50' : 'border-white/10 hover:border-cyan-400/50'
+              }`}
             >
               {/* Subtle neon corner highlight */}
               <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-cyan-500/10 via-transparent to-transparent pointer-events-none" />
@@ -559,16 +570,25 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Direct Request CTA */}
-              <div className="pt-6 mt-6 border-t border-white/10">
+              {/* Direct Request CTA with Form Link & Pre-selection */}
+              <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between gap-4">
+                <button
+                  type="button"
+                  onClick={() => handleSelectServiceAndScroll(service.title)}
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 hover:text-white transition-colors cursor-pointer"
+                >
+                  <span>{t("services.request", "Solicitar Orçamento")}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                </button>
+
                 <a
                   href={getWhatsAppLink(service.title)}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-between w-full text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 group-hover:text-white transition-colors"
+                  title="Conversar direto no WhatsApp"
+                  className="p-2 rounded-lg bg-zinc-950 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500 hover:text-black transition-all"
                 >
-                  <span>Solicitar Orçamento</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                  <MessageSquare className="w-3.5 h-3.5" />
                 </a>
               </div>
             </motion.div>
@@ -577,7 +597,12 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. DANIEL RODRIGUES: JORNALISMO INVESTIGATIVO, OSINT & LINUX              */}
+      {/* 3. SHOWCASE MÁGICO 3D & CINEMA EM MOVIMENTO                               */}
+      {/* ========================================================================= */}
+      <Magic3DShowcase />
+
+      {/* ========================================================================= */}
+      {/* 4. DANIEL RODRIGUES: JORNALISMO INVESTIGATIVO, OSINT & LINUX              */}
       {/* ========================================================================= */}
       <section id="osint" className="py-32 bg-[#05070c] px-6 relative overflow-hidden border-y border-white/10 scroll-mt-24">
         {/* Cyber Grid Background */}
@@ -594,13 +619,13 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-950/50 border border-emerald-500/30 text-xs font-mono text-emerald-300">
               <Shield className="w-3.5 h-3.5 text-emerald-400" />
-              <span>INVESTIGATIVE JOURNALISM & CYBER FORENSICS // DANIEL RODRIGUES</span>
+              <span>{t("osint.badge", "INVESTIGATIVE JOURNALISM & CYBER FORENSICS // DANIEL RODRIGUES")}</span>
             </div>
             <h2 className="font-display text-4xl sm:text-6xl uppercase tracking-tighter text-white">
-              A Fusão Entre <span className="text-cyan-400">Jornalismo Investigativo</span> & Tecnologia
+              {t("osint.title", "A Fusão Entre")} <span className="text-cyan-400">{t("osint.titleHighlight", "Jornalismo Investigativo & Tecnologia")}</span>
             </h2>
             <p className="text-zinc-400 text-base sm:text-lg font-sans leading-relaxed font-light">
-              Daniel Rodrigues reúne dois universos complementares: o rigor da apuração documental do jornalismo com a soberania técnica de sistemas Linux e inteligência de fontes abertas (OSINT).
+              {t("osint.subtitle", "Daniel Rodrigues reúne dois universos complementares: o rigor da apuração documental do jornalismo com a soberania técnica de sistemas Linux e inteligência de fontes abertas (OSINT).")}
             </p>
           </motion.div>
 
@@ -624,25 +649,25 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold font-display text-white">
-                      Daniel Rodrigues
+                      {t("osint.founderTitle", "Daniel Rodrigues")}
                     </h3>
                     <p className="text-xs font-mono text-emerald-400">
-                      Jornalista Investigativo (DRT) • Arquiteto de Software • OSINT Specialist
+                      {t("osint.founderRole", "Jornalista Investigativo (DRT) • Arquiteto de Software • OSINT Specialist")}
                     </p>
                   </div>
                 </div>
 
                 <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-sans font-light">
-                  "Na Draft Creative Studio, não fazemos apenas publicidade visual. Aplicamos a disciplina investigativa na apuração de marcas, na criação de narrativas sem falhas e na extração forense de dados com sistemas Linux e ferramentas OSINT. Da câmera de cinema ao terminal, cada detalhe é comprovado e factual."
+                  {t("osint.founderQuote", "\"Na Draft Creative Studio, não fazemos apenas publicidade visual. Aplicamos a disciplina investigativa na apuração de marcas, na criação de narrativas sem falhas e na extração forense de dados com sistemas Linux e ferramentas OSINT. Da câmera de cinema ao terminal, cada detalhe é comprovado e factual.\"")}
                 </p>
 
                 {/* Pillar Points */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   {[
-                    { title: "OSINT Forensics", desc: "Verificação de metadados, análise de imagens e fontes abertas." },
-                    { title: "Rigor Jornalístico (DRT)", desc: "Apuração ética de fatos, entrevistas e apuração documental." },
-                    { title: "Sistemas Linux", desc: "Ambiente soberano, automações em shell e infraestrutura segura." },
-                    { title: "Direção de Fotografia", desc: "Sensibilidade visual aliada ao olhar crítico investigativo." }
+                    { title: t("osint.pillar1Title", "OSINT Forensics"), desc: t("osint.pillar1Desc", "Verificação de metadados, análise de imagens e fontes abertas.") },
+                    { title: t("osint.pillar2Title", "Rigor Jornalístico (DRT)"), desc: t("osint.pillar2Desc", "Apuração ética de fatos, entrevistas e apuração documental.") },
+                    { title: t("osint.pillar3Title", "Sistemas Linux"), desc: t("osint.pillar3Desc", "Ambiente soberano, automações em shell e infraestrutura segura.") },
+                    { title: t("osint.pillar4Title", "Direção de Fotografia"), desc: t("osint.pillar4Desc", "Sensibilidade visual aliada ao olhar crítico investigativo.") }
                   ].map((pillar, pIdx) => (
                     <div
                       key={pIdx}
@@ -678,7 +703,7 @@ export default function Home() {
                   rel="noreferrer"
                   className="px-4 py-2 rounded-lg bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 hover:bg-cyan-400 hover:text-black text-xs font-mono font-bold transition-all"
                 >
-                  Falar com Daniel
+                  {t("osint.ctaTalk", "Falar com Daniel")}
                 </a>
               </div>
             </motion.div>
@@ -698,7 +723,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. PROJETOS SELECIONADOS: CASOS REAIS DE SUCESSO                          */}
+      {/* 5. PROJETOS SELECIONADOS: CASOS REAIS DE SUCESSO                          */}
       {/* ========================================================================= */}
       <section id="projetos" className="py-32 px-6 max-w-7xl mx-auto relative scroll-mt-24">
         <motion.div
@@ -711,13 +736,13 @@ export default function Home() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-950/50 border border-purple-500/30 text-xs font-mono text-purple-300 mb-3">
               <Film className="w-3.5 h-3.5 text-purple-400" />
-              <span>SELECTED WORK // ARQUIVO DE IMPACTO</span>
+              <span>{t("projects.badge", "SELECTED WORK // ARQUIVO DE IMPACTO")}</span>
             </div>
             <h2 className="font-display text-4xl sm:text-6xl uppercase tracking-tighter text-white">
-              Projetos <span className="text-purple-400">Selecionados</span>
+              {t("projects.title", "Projetos")} <span className="text-purple-400">{t("projects.titleHighlight", "Selecionados")}</span>
             </h2>
             <p className="text-zinc-400 text-base sm:text-lg font-sans max-w-lg mt-2 font-light">
-              Uma amostra da simbiose entre estética cinematográfica, inteligência digital e resultados reais.
+              {t("projects.subtitle", "Uma amostra da simbiose entre estética cinematográfica, inteligência digital e resultados reais.")}
             </p>
           </div>
 
@@ -725,7 +750,7 @@ export default function Home() {
             to="/projetos"
             className="px-6 py-3 rounded-xl border border-white/20 hover:border-cyan-400 text-zinc-300 hover:text-white font-mono text-xs uppercase tracking-widest transition-all"
           >
-            Ver Arquivo Completo
+            {t("projects.fullArchive", "Ver Arquivo Completo")}
           </Link>
         </motion.div>
 
@@ -770,7 +795,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-white transition-colors"
                     >
-                      <span>Acessar Projeto</span>
+                      <span>{t("projects.viewProject", "Acessar Projeto")}</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>
@@ -782,7 +807,7 @@ export default function Home() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. VAMOS CONVERSAR & CONTATO: CONVERSÃO DIRETA                            */}
+      {/* 6. VAMOS CONVERSAR & CONTATO: ENVIANDO COM O SERVIÇO DE ORIGEM            */}
       {/* ========================================================================= */}
       <section id="contato" className="py-32 px-6 max-w-7xl mx-auto relative scroll-mt-24">
         <motion.div
@@ -797,13 +822,13 @@ export default function Home() {
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-950/50 border border-cyan-500/30 text-xs font-mono text-cyan-300">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                <span>INICIE SUA TRANSMISSÃO // CONTATO DIRETO</span>
+                <span>{t("contact.badge", "INICIE SUA TRANSMISSÃO // CONTATO DIRETO")}</span>
               </div>
               <h2 className="font-display text-4xl sm:text-6xl uppercase tracking-tighter text-white">
-                Vamos Criar <span className="text-cyan-400">Juntos?</span>
+                {t("contact.title", "Vamos Criar")} <span className="text-cyan-400">{t("contact.titleHighlight", "Juntos?")}</span>
               </h2>
               <p className="text-zinc-300 text-base sm:text-lg font-sans font-light leading-relaxed">
-                Pronto para transformar a presença audiovisual, a identidade visual e o alcance da sua empresa com Daniel Rodrigues e a Draft Creative Studio?
+                {t("contact.subtitle", "Pronto para transformar a presença audiovisual, a identidade visual e o alcance da sua empresa com Daniel Rodrigues e a Draft Creative Studio?")}
               </p>
             </div>
 
@@ -821,7 +846,7 @@ export default function Home() {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold block">
-                    WhatsApp Direto (Resposta Rápida)
+                    {t("contact.whatsappTitle", "WhatsApp Direto (Resposta Rápida)")}
                   </span>
                   <span className="text-base font-bold text-white font-mono group-hover:text-emerald-300 transition-colors">
                     +55 61 98905-720
@@ -841,7 +866,7 @@ export default function Home() {
                 </div>
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold block">
-                    Instagram Oficial
+                    {t("contact.instaTitle", "Instagram Oficial")}
                   </span>
                   <span className="text-base font-bold text-white font-mono group-hover:text-pink-300 transition-colors">
                     @draftcreativestudio
@@ -851,17 +876,23 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Column: Lead Form */}
+          {/* Right Column: Lead Form sending to draftcs21@gmail.com with selected service */}
           <div className="lg:col-span-7">
             <form
               action="https://formsubmit.co/draftcs21@gmail.com"
               method="POST"
               className="p-8 sm:p-10 rounded-3xl bg-zinc-900/60 border border-white/10 backdrop-blur-xl space-y-6 shadow-2xl"
             >
+              {/* Dynamic Subject and Target Service Identification */}
               <input
                 type="hidden"
                 name="_subject"
-                value="Novo Contato Oficial - Draft Creative Studio"
+                value={`Novo Contato Draft: [${selectedService}]`}
+              />
+              <input
+                type="hidden"
+                name="Servico_Origem_Clicado"
+                value={selectedService}
               />
               <input type="hidden" name="_captcha" value="false" />
               <input
@@ -873,7 +904,7 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-300">
-                    Seu Nome *
+                    {t("contact.formName", "Seu Nome *")}
                   </label>
                   <input
                     type="text"
@@ -886,7 +917,7 @@ export default function Home() {
 
                 <div className="space-y-2">
                   <label className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-300">
-                    Seu E-mail Corporativo *
+                    {t("contact.formEmail", "Seu E-mail Corporativo *")}
                   </label>
                   <input
                     type="email"
@@ -900,30 +931,28 @@ export default function Home() {
 
               <div className="space-y-2">
                 <label className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-300">
-                  Serviço de Interesse *
+                  {t("contact.formService", "Serviço de Interesse *")}
                 </label>
                 <select
                   name="Servico_Desejado"
+                  value={selectedService}
+                  onChange={(e) => setSelectedService(e.target.value)}
                   required
                   className="w-full p-4 rounded-xl bg-zinc-950 border border-white/10 text-white focus:border-cyan-400 outline-none transition-colors font-mono text-sm"
                 >
-                  <option value="Consultoria em Audiovisual">Consultoria em Audiovisual & Direção</option>
-                  <option value="Produção Audiovisual 6K">Produção Audiovisual & Captação 6K (Institucional / Comercial)</option>
-                  <option value="Edição de Vídeo Sênior e Motion">Edição de Vídeo Sênior & Motion Design</option>
-                  <option value="Concept Design e Branding">Concept Design, Branding & Identidade Visual</option>
-                  <option value="Social Media e Redes">Criação de Conteúdo & Social Media de Alto Impacto</option>
-                  <option value="Fotografia Corporativa">Fotografia Corporativa & Eventos</option>
-                  <option value="Fotojornalismo">Fotojornalismo & Cobertura Institucional</option>
-                  <option value="Roteiros e Master Scenes">Criação de Roteiros Cinematográficos & Master Scenes</option>
-                  <option value="Consultoria em IA">Consultoria em IA Aplicada ao Audiovisual</option>
-                  <option value="Jornalismo Investigativo OSINT">Jornalismo Investigativo, OSINT & Auditoria TI</option>
-                  <option value="Projeto 360 Completo">Projeto 360° Completo</option>
+                  {DRAFT_SERVICES.map((serv) => (
+                    <option key={serv.id} value={serv.title}>
+                      {serv.title}
+                    </option>
+                  ))}
+                  <option value="Projeto 360 Completo">Projeto 360° Completo (Audiovisual + Design + Redes)</option>
+                  <option value="Consultoria em OSINT e Forense">Consultoria em OSINT & Auditoria Forense TI</option>
                 </select>
               </div>
 
               <div className="space-y-2">
                 <label className="text-xs font-mono uppercase font-bold tracking-wider text-zinc-300">
-                  Mensagem / Desafio da sua Empresa *
+                  {t("contact.formMessage", "Mensagem / Desafio da sua Empresa *")}
                 </label>
                 <textarea
                   name="Mensagem"
@@ -939,7 +968,7 @@ export default function Home() {
                 className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-mono font-bold uppercase tracking-widest text-sm transition-all duration-300 shadow-[0_0_25px_rgba(0,240,255,0.3)] cursor-pointer flex items-center justify-center gap-2"
               >
                 <Send className="w-4 h-4" />
-                <span>Enviar Solicitação</span>
+                <span>{t("contact.formSubmit", "Enviar Solicitação")}</span>
               </button>
             </form>
           </div>
@@ -960,13 +989,13 @@ export default function Home() {
                 Draft Creative Studio Ltda.
               </span>
               <span className="text-[10px] font-mono text-zinc-500">
-                Daniel Rodrigues • CNPJ & Atuação Global
+                {t("footer.cnpj", "Daniel Rodrigues • CNPJ & Atuação Global")}
               </span>
             </div>
           </div>
 
           <p className="text-zinc-500 text-xs font-mono text-center md:text-left">
-            © 2026 Draft Creative Studio Ltda. Todos os direitos reservados.
+            © 2026 Draft Creative Studio Ltda. {t("footer.rights", "Todos os direitos reservados.")}
           </p>
 
           <div className="flex gap-6 text-xs font-mono uppercase tracking-wider text-zinc-400">
