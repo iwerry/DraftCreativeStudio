@@ -338,9 +338,10 @@ const staggerContainer = {
 };
 
 export default function ServicesPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<string | undefined>(undefined);
+  const currentLang = i18n?.language ? i18n.language.slice(0, 2) : 'en';
 
   useEffect(() => {
     window.scrollTo(0, 0);
