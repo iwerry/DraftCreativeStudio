@@ -110,6 +110,22 @@ export default function Home() {
       {/* 1. HERO SECTION: INTERACTIVE 3D PRISM + FUTURISTIC TYPOGRAPHY           */}
       {/* ========================================================================= */}
       <section className="relative min-h-screen pt-36 pb-24 px-6 w-full flex items-center justify-center overflow-hidden bg-[#05070c]">
+        {/* Modern Cinematic Studio Video Loop */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-30 mix-blend-screen scale-105 filter brightness-110 contrast-125"
+          >
+            <source src="/studio/hero_particles.mp4" type="video/mp4" />
+          </video>
+          {/* Vignette gradients for 100% crisp typography readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#05070c] via-transparent to-[#05070c]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#05070c_85%)]" />
+        </div>
+
         {/* Real 3D Optical Canvas */}
         <Hero3D />
 

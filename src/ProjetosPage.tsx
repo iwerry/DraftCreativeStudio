@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { ContactModal } from "./components/ui/ContactModal";
+import { FallingCrosses3D } from "./components/ui/FallingCrosses3D";
 import PageTransition from "./PageTransition";
 import { PROJECTS } from "./projectsData";
 
@@ -38,6 +39,9 @@ export default function ProjetosPage() {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
+
+        {/* 3D Falling Gamer Crosses Background */}
+        <FallingCrosses3D />
 
         {/* Ambient Top Glow */}
         <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">

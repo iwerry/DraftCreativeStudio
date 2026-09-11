@@ -17,6 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { ContactModal } from './components/ui/ContactModal';
+import { CosmicBackground } from './components/ui/CosmicBackground';
 import PageTransition from './PageTransition';
 
 interface ServicesPageProps {
@@ -363,10 +364,8 @@ export default function ServicesPage() {
           initialService={selectedService}
         />
 
-        {/* Ambient Top Glow */}
-        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-cyan-900/15 rounded-full blur-[140px]" />
-        </div>
+        {/* Cosmic Moving Lights & Subtle Twinkling Stars Background */}
+        <CosmicBackground />
 
         {/* Main Content */}
         <main className="pt-36 pb-28 px-6 max-w-7xl mx-auto w-full flex-1">
